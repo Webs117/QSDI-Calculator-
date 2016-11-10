@@ -23,7 +23,9 @@
 
 	  	
 
-	  	var result = parseInt(s1) + parseInt(s2);
+
+	  	var result = parseInt(s1) + parseInt(s2) + parseInt(s3)+ parseInt(s4) + parseInt(s5) + parseInt(s6) + parseInt(s7);
+	  					 
 
 	  	var str = result.toString();
     	console.log(result);
