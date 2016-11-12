@@ -2,6 +2,13 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  
+  background-color: red;
+  background-image:
+    radial-gradient(
+       #999,
+      #333
+    );
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -11,6 +18,15 @@ body {
   padding-right: 15px;
   padding-left: 15px;
 }
+
+.container{
+	background-color: white;
+	border-radius: 15px;
+	border: 1px solid black;
+	margin-top: 100px;
+	box-shadow: 0 8px 50px -4px black;
+}
+
 
 /* Custom page header */
 .header {
@@ -44,11 +60,11 @@ body {
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid black;
+  background-color: white;
 }
 .jumbotron .btn {
-  padding: 14px 24px;
-  font-size: 21px;
+  
 }
 
 /* Supporting marketing content */
@@ -76,6 +92,10 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+#highlight{
+	background-color: blue;
 }
 
 
