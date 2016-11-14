@@ -3,12 +3,19 @@
 	var rawWeights = [];
 	
 	var rawSvalues = [];
+
+	var dValues = [];
 	
 	//collapse group 
 	var myGroup = $('#collapseGroup');
 	myGroup.on('show.bs.collapse','.collapse', function() {
 	    myGroup.find('.collapse.in').collapse('hide');
 	});
+
+	var myGroup2 = $('#collapseGroup2');
+	myGroup2.on('show.bs.collapse','.collapse', function() {
+	    myGroup2.find('.collapse.in').collapse('hide');
+	});	
 
 	
 	$("#W1").on("blur", function(){
@@ -44,10 +51,31 @@
 	function updateSval(pos){
 		
 	}
+
+	function setD1(){
+		if($("#d1CheckBox").is(":checked")){
+			console.log("checked");
+		}else{
+			console.log("not checked");
+		}
+	}
 	
 
-    $( "#calculateBtn" ).click(function( event ) {
+    $( "#sValueBtn" ).click(function( event ) {
 
+
+    	setD1();
+
+
+		event.preventDefault();
+	});
+
+/*
+    $( "#sValueBtn" ).click(function( event ) {
+
+
+    	setD1();
+    	
 	 	var result = 0;
 
 	 	var totalWeight;
@@ -74,7 +102,6 @@
 
 		event.preventDefault();
 	});
-
-
+*/
 
 })
