@@ -48,15 +48,22 @@
 	 	}
 	}
 	
-	function updateSval(pos){
-		
-	}
 
 	function setD1(){
 		if($("#d1CheckBox").is(":checked")){
 			console.log("checked");
+			if( dValues.length < 1){
+				dValues.add(1.0);
+			}else{
+				dValues[0] = 1.0;
+			}
 		}else{
 			console.log("not checked");
+		    if( dValues.length < 1){
+				dValues.add(0);
+			}else{
+				dValues[0] = 0;
+			}
 		}
 	}
 	
@@ -66,9 +73,38 @@
 
     	setD1();
 
+    	if(rawSvalues.lengh < 1){
+    		construcSvalues();
+    	}else{
+    		for(int i=0; i < 7; i++){
+    			rawSvalues[i] = parseFloat($("#S" + (i+1)).val());
+    		}
+    	}
+
 
 		event.preventDefault();
 	});
+
+
+    $( "#calculateBtn" ).click(function( event ) {
+
+    	if(rawWeights.length < 1){
+    		construcWeights();
+    	}else{
+    		var totalweight = totalWeights();
+    		if(totalweight == 100){
+    			
+    		}else{
+    			Console.log("Weights don't add up to 100")
+    		}
+    	}
+    	
+
+
+		event.preventDefault();
+	});
+
+
 
 /*
     $( "#sValueBtn" ).click(function( event ) {
