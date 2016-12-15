@@ -56,7 +56,7 @@
 				</a>
             </label>
             <div class="col-sm-3">
-              <input type="number" class="form-control" id="S1" placeholder="Enter S1" min="0">
+              <input type="number" class="form-control" id="S1" placeholder="Enter S1" min="0" pattern="\d*">
             </div>
 			
 			<label for="S2" class="col-sm-2 control-label">
@@ -71,13 +71,13 @@
 
            <div class="collapse" id="S1Des">
             <div class="well">
-              The total number of modules
+              The total number of modules. S<sub>1</sub> must be greater than S<sub>2</sub>, S<sub>3</sub>, S<sub>7</sub>
             </div>
           </div> 
 
           <div class="collapse" id="S2Des">
             <div class="well">
-              The number of modules that either rely on correct data input, or produce data to be used elsewhere
+              The number of modules that either rely on correct data input, or produce data to be used elsewhere. S<sub>2</sub> must be less than S<sub>1</sub>.
             </div>
           </div>
 
@@ -104,13 +104,13 @@
 		  
 		  <div class="collapse" id="S3Des">
             <div class="well">
-              The number of modules that depend on prior processing
+              The number of modules that depend on prior processing. S<sub>2</sub> must be less than S<sub>1</sub>.
             </div>
           </div> 
 
           <div class="collapse" id="S4Des">
             <div class="well">
-              The number of database items including all attributes attached
+              The number of database items including all attributes attached. S<sub>4</sub> must be greater than S<sub>5</sub> and S<sub>6</sub>
             </div>
           </div>
 
@@ -136,13 +136,13 @@
 		  
 		  <div class="collapse" id="S5Des">
             <div class="well">
-              The number of unique database items
+              The number of unique database items. S<sub>5</sub> must be less than S<sub>4</sub>.
             </div>
           </div> 
 
           <div class="collapse" id="S6Des">
             <div class="well">
-              The number of individual database objects
+              The number of individual database objects. S<sub>6</sub> must be less than S<sub>4</sub>.
             </div>
           </div>
 
@@ -159,12 +159,20 @@
 		  
 		  <div class="collapse" id="S7Des">
             <div class="well">
-              The number of modules with a single entry and single exit
+              The number of modules with a single entry and single exit. S<sub>7</sub> must be less than S<sub>1</sub>.
             </div>
           </div> 
 
         <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-4">
+
+
+          <label for="d1CheckBox" class="col-sm-2 control-label">
+            <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D1Des2" aria-expanded="false" aria-controls="D1Des2">
+              D<sub>1</sub>
+            </a>
+          </label>
+
+          <div class="col-sm-4">
             <div class="checkbox"> 
               <label>
                 <input type="checkbox" id="d1CheckBox"> Used distinct method?
@@ -172,6 +180,12 @@
             </div>
           </div>
         </div>
+
+      <div class="collapse" id="D1Des2">
+            <div class="well">
+              Program Structure. If the architectural design was developed using a distinct method(e.g. data flow-oriented or object-oriented design), then D<sub>1</sub> = 1, otherwise D<sub>1</sub> = 0
+            </div>
+          </div> 
 
         <div class="form-group">
           <div class="col-sm-offset-3 col-sm-1">
@@ -205,7 +219,7 @@
 
             <label for="W1" class="col-sm-offset-1 col-sm-2 control-label">W<sub>1</sub> for D<sub>1</sub></label>
             <div class="col-sm-3">
-              <input type="number" class="form-control" id="W1" placeholder="Enter W1 %">
+              <input type="number" class="form-control" id="W1" placeholder="Enter W1">
 			     </div> 
 			     <div class="col-sm-1">%</div>
 
@@ -213,7 +227,7 @@
 
            <div class="collapse" id="D1Des">
             <div class="well">
-              Program Structure
+               Program Structure. If the architectural design was developed using a distinct method(e.g. data flow-oriented or object-oriented design), then D<sub>1</sub> = 1, otherwise D<sub>1</sub> = 0
             </div>
           </div> 
 
@@ -227,16 +241,16 @@
             <div class="col-sm-3">
               <input type="number" readonly="readyonly" class="form-control" id="D2" placeholder="">
             </div> 
-            <label for="W2" class="col-sm-4 control-label">W<sub>2</sub> for D<sub>2</sub></label>
+            <label for="W2" class="col-sm-offset-1 col-sm-2 control-label">W<sub>2</sub> for D<sub>2</sub></label>
             <div class="col-sm-3">
               <input type="number" class="form-control" id="W2" placeholder="Enter W2">
             </div> 
-
+           <div class="col-sm-1">%</div>
           </div>
 
           <div class="collapse" id="D2Des">
             <div class="well">
-              Module Independence 
+              Module Independence: D<sub>2</sub> = 1 - (S<sub>2</sub> / S<sub>1</sub>)
             </div>
           </div>
 
@@ -251,17 +265,18 @@
               <input type="number" readonly="readyonly" class="form-control" id="D3" placeholder="">
             </div> 
 
-            <label for="W3" class="col-sm-4 control-label">
+            <label for="W3" class="col-sm-offset-1 col-sm-2 control-label">
               W<sub>3</sub> for D<sub>3</sub>
             </label>
             <div class="col-sm-3">
               <input type="number" class="form-control" id="W3" placeholder="Enter W3">
             </div> 
+            <div class="col-sm-1">%</div>
           </div>
 
           <div class="collapse" id="D3Des">
             <div class="well">
-              Modules not Dependent on prior processing 
+              Modules not Dependent on prior processing: D<sub>3</sub> = 1 - (S<sub>3</sub> / S<sub>1</sub>)
             </div>
           </div>
 
@@ -276,18 +291,19 @@
               <input type="number" readonly="readyonly" class="form-control" id="D4" placeholder="">
             </div> 
 
-            <label for="W4" class="col-sm-4 control-label">
+            <label for="W4" class="col-sm-offset-1 col-sm-2 control-label">
               W<sub>4</sub> for D<sub>4</sub>
             </label>
 
             <div class="col-sm-3">
               <input type="number" class="form-control" id="W4" placeholder="Enter W4">
             </div> 
+            <div class="col-sm-1">%</div>
           </div>
 
           <div class="collapse" id="D4Des">
             <div class="well">
-              Database size
+              Database size: D<sub>6</sub> = 1 - (S<sub>5</sub> / S<sub>4</sub>)
             </div>
           </div>
 
@@ -301,17 +317,18 @@
               <input type="number" readonly="readyonly" class="form-control" id="D5" placeholder="">
             </div> 
 
-            <label for="W5" class="col-sm-4 control-label">
+            <label for="W5" class="col-sm-offset-1 col-sm-2 control-label">
               W<sub>5</sub> for D<sub>5</sub>
             </label>
             <div class="col-sm-3">
               <input type="number" class="form-control" id="W5" placeholder="Enter W5">
             </div> 
+           <div class="col-sm-1">%</div>    
           </div>
 
           <div class="collapse" id="D5Des">
               <div class="well">
-                Database compartmentalization 
+                Database compartmentalization: D<sub>5</sub> = 1 - (S<sub>6</sub> / S<sub>4</sub>)
               </div>
           </div>
 
@@ -325,24 +342,25 @@
               <input type="number" readonly="readyonly" class="form-control" id="D6" placeholder="">
             </div> 
 
-            <label for="W6" class="col-sm-4 control-label">
+            <label for="W6" class="col-sm-offset-1 col-sm-2 control-label">
               W<sub>6</sub> for D<sub>6</sub>
             </label>
             <div class="col-sm-3">
               <input type="number" class="form-control" id="W6" placeholder="Enter W6">
             </div> 
+           <div class="col-sm-1">%</div>
           </div>
 
           <div class="collapse" id="D6Des">
             <div class="well">
-              Module entrance/exit characteristic
+              Module entrance/exit characteristic: D<sub>6</sub> = 1 - (S<sub>7</sub> / S<sub>1</sub>)
             </div>
           </div>
 
 
           <div class="form-group">
 
-          <label for="WTotal" class="col-sm-offset-5 col-sm-4 control-label">
+          <label for="WTotal" class="col-sm-offset-4 col-sm-4 control-label">
               Total Weight
             </label>
             <div class="col-sm-3">
@@ -350,6 +368,8 @@
             </div> 
 
           </div>
+
+      <br/> 
 
         <div class="form-group">
           <div class="col-sm-offset-5 col-sm-1">

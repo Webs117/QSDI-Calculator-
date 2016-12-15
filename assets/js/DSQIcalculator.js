@@ -17,21 +17,11 @@
 	    myGroup2.find('.collapse.in').collapse('hide');
 	});	
 
-	
+	/*
 	$("#W1").on("blur", function(){
 		alert("handler for blur called");
 	});
-	
-	
-	function construcWeights(){
-		for (var i = 0; i < 6; i++) {
-	 		rawWeights.push(parseFloat($("#W" + (i+1)).val()));
-	 	}
-	}
-	
-	function updateWeight(pos){
-		
-	}
+	*/
 	
 	function totalWeights(){
 		var total = 0;
@@ -42,45 +32,110 @@
 		return total;
 	}
 	
-	function construcSvalues(){
-	 	for (var i = 0; i < 7; i++) {
-	 		rawSvalues.push(parseFloat($("#S" + (i+1)).val()));
-	 	}
+
+	function auth(){
+		for(var i=0; i < 7; i++){
+    		if(rawSvalues[i] < -1 || rawSvalues[i] == NaN){
+    			Console.log("S" + (i+1) + " is invalid");
+    		}
+    	}
+
+    	if(rawSvalues[0] < rawSvalues[1]){
+
+    	}
+    	if(rawSvalues[0] < rawSvalues[2]){
+    		
+    	}
+    	if(rawSvalues[3] < rawSvalues[4]){
+    		
+    	}
+    	if(rawSvalues[3] < rawSvalues[5]){
+    		
+    	}
+    	if(rawSvalues[0] < rawSvalues[6]){
+    		
+    	}
+
+    	//test for decimal numbers?
 	}
+
+
+
 	
 
-	function setD1(){
-		if($("#d1CheckBox").is(":checked")){
+    $( "#sValueBtn" ).click(function( event ) {
+
+
+    	//handle d value 
+    	if($("#d1CheckBox").is(":checked")){
 			console.log("checked");
 			if( dValues.length < 1){
-				dValues.add(1.0);
+				dValues.push(1.0);
 			}else{
 				dValues[0] = 1.0;
 			}
 		}else{
 			console.log("not checked");
 		    if( dValues.length < 1){
-				dValues.add(0);
+				dValues.push(0.0);
 			}else{
 				dValues[0] = 0;
 			}
 		}
-	}
-	
 
-    $( "#sValueBtn" ).click(function( event ) {
-
-
-    	setD1();
-
-    	if(rawSvalues.lengh < 1){
-    		construcSvalues();
+    	//check array 
+    	if(rawSvalues.length < 1){
+    		for (var i = 0; i < 7; i++) {
+	 			rawSvalues.push(parseFloat($("#S" + (i+1)).val()));
+	 		}
     	}else{
-    		for(int i=0; i < 7; i++){
+    		for(var i=0; i < 7; i++){
     			rawSvalues[i] = parseFloat($("#S" + (i+1)).val());
     		}
     	}
 
+    	//check s-value 
+		//auth();
+
+    	//calculate d values 
+    	if(dValues.length == 1){
+
+    		//add d2
+    		dValues.push( 1 - (rawSvalues[1] / rawSvalues[0] ));
+
+    		//add d3
+    		dValues.push( 1 - (rawSvalues[2] / rawSvalues[0] ));
+    		
+    		//add d4
+    		dValues.push( 1 - (rawSvalues[4] / rawSvalues[3] ));
+    		
+    		//add d5
+    		dValues.push( 1 - (rawSvalues[5] / rawSvalues[3] ));
+    		
+    		//add d6
+    		dValues.push( 1 - (rawSvalues[6] / rawSvalues[0] ));
+
+    	}else{
+    		//update d2
+    		dValues[1] = ( 1 - (rawSvalues[1] / rawSvalues[0] ));
+
+    		//update d3
+    		dValues[2] = ( 1 - (rawSvalues[2] / rawSvalues[0] ));
+    		
+    		//update d4
+    		dValues[3] = ( 1 - (rawSvalues[4] / rawSvalues[3] ));
+    		
+    		//update d5
+    		dValues[4] = ( 1 - (rawSvalues[5] / rawSvalues[3] ));
+    		
+    		//update d6
+    		dValues[5] = ( 1 - (rawSvalues[6] / rawSvalues[0] ));
+    	}
+
+    	//update d values 
+    		for(var i=0; i < 6; i++){
+    			$("#D" + (i + 1)).val(dValues[i]);
+    		}
 
 		event.preventDefault();
 	});
@@ -88,16 +143,29 @@
 
     $( "#calculateBtn" ).click(function( event ) {
 
+
     	if(rawWeights.length < 1){
-    		construcWeights();
+    		for (var i = 0; i < 6; i++) {
+	 			rawWeights.push(parseFloat($("#W" + (i+1)).val()));
+	 		}
     	}else{
-    		var totalweight = totalWeights();
-    		if(totalweight == 100){
-    			
-    		}else{
-    			Console.log("Weights don't add up to 100")
+    		for(var i=0; i < 6; i++){
+    			$("#W" + (i + 1)).val(dValues[i]);
     		}
     	}
+
+
+		var totalweight = totalWeights();
+		var DSQI = 0;
+		if(totalweight == 100){
+			for (var i = 0; i < dValues.length; i++) {
+				DSQI += (dValues[i] * (rawWeights[i] / 100));
+			}
+			$("#DSQI").val(DSQI);
+		}else{
+			Console.log("Weights don't add up to 100")
+    	}
+    	
     	
 
 
