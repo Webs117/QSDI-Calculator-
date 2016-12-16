@@ -152,6 +152,13 @@
 	
 	}
 
+/*****************************
+
+DO NOT EDIT ANYTHING BELOW
+		
+
+*******************************/
+
 	function totalWeights(){
 		var total = 0;
 		for (var j = 0; j < weights.length; j++) {

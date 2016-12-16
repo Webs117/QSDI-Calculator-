@@ -115,7 +115,12 @@
 	
 	}
 
+/*****************************
 
+DO NOT EDIT ANYTHING BELOW
+		
+
+*******************************/
 
 	function auth(){
         var pass = true;
