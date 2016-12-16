@@ -1,6 +1,6 @@
  $(document).ready(function(){
     
-	var rawWeights = [];
+	var weights = [];
 	
 	var rawSvalues = [];
 
@@ -30,9 +30,9 @@
 	
 	function totalWeights(){
 		var total = 0;
-		for (var j = 0; j < rawWeights.length; j++) {
-	 		console.log(rawWeights[j]);
-	 		total += rawWeights[j];
+		for (var j = 0; j < weights.length; j++) {
+	 		console.log(weights[j]);
+	 		total += weights[j];
 	 	}
 		return total;
 	}
@@ -69,10 +69,23 @@
     	}
 
         return pass;
-        
+
     	//test for decimal numbers?
 	}
 
+    function weightAuth(){
+
+        var pass = true;
+        //check for negative weights to avoid -100 and 200
+        for (var i = 0; i < 6; i++) {
+            if(weights[i] < 1 || weights[i] == NaN){
+                console.log("W" + (i+1) + " is invalid");
+                pass = false; 
+            }
+        }
+        return pass
+    }
+    
 
 
 	
@@ -164,9 +177,9 @@
 	
 		//check for negative weights to avoid -100 and 200
 
-    	if(rawWeights.length < 1){
+    	if(weights.length < 1){
     		for (var i = 0; i < 6; i++) {
-	 			rawWeights.push(parseFloat($("#W" + (i+1)).val()));
+	 			weights.push(parseFloat($("#W" + (i+1)).val()));
 	 		}
     	}else{
     		for(var i=0; i < 6; i++){
@@ -174,18 +187,24 @@
     		}
     	}
 
+        var pass = weightAuth();
+        if(pass){
+            var totalweight = totalWeights();
+            var DSQI = 0;
+            
+            if(totalweight == 100){
+                for (var i = 0; i < 6; i++) {
+                    DSQI += (dValues[i] * (weights[i] / 100));
+                }
+                $("#DSQI").val(DSQI);
+            }else{
+                console.log("Weights don't add up to 100")
+            }
+        }else{
+            console.log("Invalid weights");
+        }
 
-		var totalweight = totalWeights();
-		var DSQI = 0;
-		
-		if(totalweight == 100){
-			for (var i = 0; i < 6; i++) {
-				DSQI += (dValues[i] * (rawWeights[i] / 100));
-			}
-			$("#DSQI").val(DSQI);
-		}else{
-			console.log("Weights don't add up to 100")
-    	}
+
     	
     	
 

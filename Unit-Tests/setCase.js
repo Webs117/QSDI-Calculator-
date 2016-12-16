@@ -106,6 +106,9 @@
 		setDvalues();		
 		// ---------------------		
 
+
+
+		console.log("=======================================");
 	}else{
 	
 		console.log("Test Cases off");
@@ -174,7 +177,7 @@
 	    		dValues.push( 1 - (rawSvalues[6] / rawSvalues[0] ));
 
 	    	}else{
-	    		
+
 	    		//update d2
 	    		dValues[1] = ( 1 - (rawSvalues[1] / rawSvalues[0] ));
 

@@ -45,10 +45,10 @@
 		weights.push(parseFloat("20"));
 		
 		//W5
-		weights.push(parseFloat("20"));
+		weights.push(parseFloat("10"));
 		
 		//W6
-		weights.push(parseFloat("20"));		
+		weights.push(parseFloat("10"));		
 		
 		
 		calculateDSQI();
@@ -160,27 +160,46 @@
 		return total;
 	}
 	
+	function weightAuth(){
+
+		var pass = true;
+		//check for negative weights to avoid -100 and 200
+    	for (var i = 0; i < 6; i++) {
+    		if(weights[i] < 1 || weights[i] == NaN){
+    			console.log("W" + (i+1) + " is invalid");
+                pass = false; 
+    		}
+    	}
+    	return pass
+	}
 	
 	function calculateDSQI(){
 
-    	//check for negative weights to avoid -100 and 200
+		var pass = weightAuth();
 
-		var totalweight = totalWeights();
-		var DSQI = 0;
-		if(totalweight == 100){
-			for (var i = 0; i < 6; i++) {
-				DSQI += (dValues[i] * (rawWeights[i] / 100));
-			}
+		if(pass){
+			var totalweight = totalWeights();
+			var DSQI = 0;
+			if(totalweight == 100){
+				for (var i = 0; i < 6; i++) {
+					DSQI += (dValues[i] * (weights[i] / 100));
+				}
+
+			console.log("D Value Array: " + dValues.toString());	
+			console.log("Weights Array: " + weights.toString());
+			console.log("DSQI: " + DSQI);
+			console.log("-------------------------------------------");					
+				
+			}else{
+				console.log("Weights don't add up to 100")
+	    	}
+
+	    
 			
 		}else{
-			console.log("Weights don't add up to 100")
-    	}
-
-    
-		console.log("D Value Array: " + dValues.toString());	
-		console.log("Weights Array: " + weights.toString());
-		console.log("DSQI: " + DSQI);
-		console.log("-------------------------------------------");
+			console.log("Invalid weights");
+		}
+		
 		
 	
 	}
