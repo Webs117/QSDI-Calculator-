@@ -31,7 +31,6 @@
 	function totalWeights(){
 		var total = 0;
 		for (var j = 0; j < weights.length; j++) {
-	 		console.log(weights[j]);
 	 		total += weights[j];
 	 	}
 		return total;
@@ -42,29 +41,34 @@
         var pass = true;
 		for(var i=0; i < 7; i++){
     		if(rawSvalues[i] < 0 || rawSvalues[i] == NaN){
-    			console.log("S" + (i+1) + " is invalid");
+                $("#S" + (i+1) +"Par").addClass("has-error");
+                $("#S" + (i+1) +"Err").show();
                 pass = false; 
     		}
     	}
 
+        if(pass == false){
+            $( "#invalidS" ).show("slow");
+        }
+
     	if(rawSvalues[0] < rawSvalues[1]){
-            console.log("S1 must be greater than S2");
+            $( "#invalid1" ).show("slow");
             pass = false; 
     	}
     	if(rawSvalues[0] < rawSvalues[2]){
-    		console.log("S1 must be greater than S3");
+            $( "#invalid2" ).show("slow");
             pass = false; 
     	}
     	if(rawSvalues[3] < rawSvalues[4]){
-    		console.log("S4 must be greater than S5");
+            $( "#invalid3" ).show( "slow");
             pass = false; 
     	}
     	if(rawSvalues[3] < rawSvalues[5]){
-    		console.log("S4 must be greater than S6");
+            $( "#invalid4" ).show( "slow");
             pass = false; 
     	}
     	if(rawSvalues[0] < rawSvalues[6]){
-    		console.log("S1 must be greater than S7");
+            $( "#invalid5" ).show( "slow");
             pass = false; 
     	}
 
@@ -79,7 +83,8 @@
         //check for negative weights to avoid -100 and 200
         for (var i = 0; i < 6; i++) {
             if(weights[i] < 1 || weights[i] == NaN){
-                console.log("W" + (i+1) + " is invalid");
+                $("#W" + (i+1) +"Par").addClass("has-error");
+                $("#W" + (i+1) +"Err").show();
                 pass = false; 
             }
         }
@@ -121,6 +126,17 @@
     		}
     	}
 
+
+        //reset auth
+        $( "#invalidS" ).hide();
+        for (var i = 0; i < 5; i++) {
+             $( "#invalid" + (i+1)).hide();    
+        }
+        for (var j = 0; j < 7; j++) {
+            $("#S" + (j+1) +"Par").removeClass("has-error");
+            $("#S" + (j+1) +"Err").hide();                    
+        }        
+
     	//check s-value 
 		var pass = auth();
         if(pass){
@@ -143,6 +159,8 @@
                 //add d6
                 dValues.push( 1 - (rawSvalues[6] / rawSvalues[0] ));
 
+
+
             }else{
                 //update d2
                 dValues[1] = ( 1 - (rawSvalues[1] / rawSvalues[0] ));
@@ -158,14 +176,28 @@
                 
                 //update d6
                 dValues[5] = ( 1 - (rawSvalues[6] / rawSvalues[0] ));
+
+
+
+            }
+
+            //Enable DSQI Button
+            if($("#calculateBtn").prop("disabled")){
+                $("#calculateBtn").removeAttr("disabled");
             }
 
             //update d values 
             for(var i=0; i < 6; i++){
                 $("#D" + (i + 1)).val(dValues[i]);
             }
+
         }else{
             console.log("failed S-Values Validation");
+
+            //Disable DSQI Button
+            if($("#calculateBtn").prop("disabled") == false){
+                $("#calculateBtn").attr("disabled", "disabled");
+            }
         }
     	
 
@@ -183,9 +215,19 @@
 	 		}
     	}else{
     		for(var i=0; i < 6; i++){
-    			$("#W" + (i + 1)).val(dValues[i]);
+    			weights[i] = parseFloat($("#W" + (i + 1)).val());
     		}
     	}
+
+
+        //reset Weight auth 
+        $( "#weightTotal" ).hide();
+        $( "#invalidWeight" ).hide();
+
+        for (var j = 0; j < 7; j++) {
+            $("#W" + (j+1) +"Par").removeClass("has-error");
+            $("#W" + (j+1) +"Err").hide();                    
+        }  
 
         var pass = weightAuth();
         if(pass){
@@ -199,9 +241,11 @@
                 $("#DSQI").val(DSQI);
             }else{
                 console.log("Weights don't add up to 100")
+                $( "#weightTotal" ).show("Slow");
             }
         }else{
             console.log("Invalid weights");
+            $( "#invalidWeight" ).show("Slow");
         }
 
 

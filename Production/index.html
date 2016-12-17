@@ -49,24 +49,36 @@
 		<form class="form-horizontal">
         <div id="collapseGroup">
 		
-          <div class="form-group">
-            <label for="S1" class="col-sm-2 control-label">
-				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S1Des" aria-expanded="false" aria-controls="S1Des">
-					S<sub>1</sub>
-				</a>
-            </label>
-            <div class="col-sm-3">
-              <input type="number" class="form-control" id="S1" placeholder="Enter S1" min="0" pattern="\d*">
+          <div class="form-group has-feedback">
+
+            <div id="S1Par">
+
+              <label for="S1" class="col-sm-2 control-label">
+        				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S1Des" aria-expanded="false" aria-controls="S1Des">
+        					S<sub>1</sub>
+        				</a>
+              </label>
+              <div class="col-sm-3">
+                <input type="number" class="form-control" id="S1" placeholder="Enter S1" min="0" pattern="\d*">
+                <span id="S1Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+              </div>
+
             </div>
-			
-			<label for="S2" class="col-sm-2 control-label">
-				<a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#S2Des" aria-expanded="false" aria-controls="S2Des">
-					S<sub>2</sub>
-				</a>
-            </label>
-            <div class="col-sm-3">
-              <input type="number" class="form-control" id="S2" placeholder="Enter S2" min="0">
-            </div> 		
+
+            <div id="S2Par">
+
+  			      <label for="S2" class="col-sm-2 control-label">
+        				<a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#S2Des" aria-expanded="false" aria-controls="S2Des">
+        					S<sub>2</sub>
+        				</a>
+              </label>
+              <div class="col-sm-3">
+                <input type="number" class="form-control" id="S2" placeholder="Enter S2" min="0">
+                <span id="S2Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+              </div> 
+
+            </div>
+
           </div>
 
            <div class="collapse" id="S1Des">
@@ -82,27 +94,38 @@
           </div>
 
 
-          <div class="form-group">
-            <label for="S3" class="col-sm-2 control-label">
-				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S3Des" aria-expanded="false" aria-controls="S3Des">
-					S<sub>3</sub>
-				</a>
-			</label>
-            <div class="col-sm-3">
-              <input type="number" class="form-control" id="S3" placeholder="Enter S3" min="0">
-            </div> 
-			
-			<label for="S4" class="col-sm-2 control-label">
-				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S4Des" aria-expanded="false" aria-controls="S4Des">
-					S<sub>4</sub>
-				</a>
-			</label>
-            <div class="col-sm-3">
-              <input type="number" class="form-control" id="S4" placeholder="Enter S4" min="0">
-            </div> 
+          <div class="form-group has-feedback">
+
+            <div id="S3Par">
+              <label for="S3" class="col-sm-2 control-label">
+    				    <a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S3Des" aria-expanded="false" aria-controls="S3Des">
+    					 S<sub>3</sub>
+    				    </a>
+  			      </label>
+
+              <div class="col-sm-3">
+                <input type="number" class="form-control" id="S3" placeholder="Enter S3" min="0">
+                <span id="S3Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+              </div> 
+			      </div>
+
+            <div id="S4Par">
+
+        			<label for="S4" class="col-sm-2 control-label">
+        				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S4Des" aria-expanded="false" aria-controls="S4Des">
+        					S<sub>4</sub>
+        				</a>
+        			</label>
+              <div class="col-sm-3">
+                <input type="number" class="form-control" id="S4" placeholder="Enter S4" min="0">
+                <span id="S4Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+              </div> 
+
+            </div>
+
           </div>
 		  
-		  <div class="collapse" id="S3Des">
+		      <div class="collapse" id="S3Des">
             <div class="well">
               The number of modules that depend on prior processing. S<sub>2</sub> must be less than S<sub>1</sub>.
             </div>
@@ -114,24 +137,34 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="S5" class="col-sm-2 control-label">
-				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S5Des" aria-expanded="false" aria-controls="S5Des">
-					S<sub>5</sub>
-				</a>
-			</label>
-            <div class="col-sm-3">
-              <input type="number" class="form-control" id="S5" placeholder="Enter S5" min="0">
-            </div> 
-			
-            <label for="S6" class="col-sm-2 control-label">
-				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S6Des" aria-expanded="false" aria-controls="S6Des">
-					S<sub>6</sub>
-				</a>
-			</label>
-            <div class="col-sm-3">
-              <input type="number" class="form-control" id="S6" placeholder="Enter S6" min="0">
-            </div> 
+          <div class="form-group has-feedback">
+            <div id="S5Par">
+
+              <label for="S5" class="col-sm-2 control-label">
+        				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S5Des" aria-expanded="false" aria-controls="S5Des">
+        					S<sub>5</sub>
+        				</a>
+        			</label>
+              <div class="col-sm-3">
+                <input type="number" class="form-control" id="S5" placeholder="Enter S5" min="0">
+                <span id="S5Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+              </div> 
+
+			      </div>
+
+            <div id="S6Par">
+              <label for="S6" class="col-sm-2 control-label">
+        				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S6Des" aria-expanded="false" aria-controls="S6Des">
+        					S<sub>6</sub>
+        				</a>
+  			      </label>
+
+              <div class="col-sm-3">
+                <input type="number" class="form-control" id="S6" placeholder="Enter S6" min="0">
+                <span id="S6Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+              </div>
+            </div>
+
           </div>
 		  
 		  <div class="collapse" id="S5Des">
@@ -190,14 +223,28 @@
         <div class="form-group">
           <div class="col-sm-offset-3 col-sm-1">
             <button id="sValueBtn" type="submit" class="btn btn-primary">Set S Values</button>
-          </div>
+          </div>      
         </div>
-          
+
+        <div class="col-sm-6">
+          <p id="invalidS" style="display: none">Invalid S input. S values must be greater than zero</p>
+          <p id="invalid1" style="display: none">S<sub>1</sub> must be greater than S<sub>2</sub></p>        
+          <p id="invalid2" style="display: none">S<sub>1</sub> must be greater than S<sub>3</sub></p> 
+          <p id="invalid3" style="display: none">S<sub>4</sub> must be greater than S<sub>5</sub></p> 
+          <p id="invalid4" style="display: none">S<sub>4</sub> must be greater than S<sub>6</sub></p>   
+          <p id="invalid5" style="display: none">S<sub>1</sub> must be greater than S<sub>7</sub></p>  
+        </div>
+       
         </div>
         </form>
 		
 		<!-- divider -->
 		
+        <br />
+        <br />
+        <br />
+
+
         <div class="row">
         <h3 class="col-sm-5">D Values</h3>
         <h3 class="col-sm-5">Weights</h3>       
@@ -205,7 +252,7 @@
 		
         <form class="form-horizontal">
         <div id="collapseGroup2">
-          <div class="form-group">
+          <div class="form-group has-feedback">
 			
             <label for="D1" class="col-sm-2 control-label">
             <a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#D1Des" aria-expanded="false" aria-controls="D1Des">
@@ -216,13 +263,14 @@
               <input type="number" readonly="readyonly" class="form-control" id="D1" placeholder="">
             </div>
 
-
-            <label for="W1" class="col-sm-offset-1 col-sm-2 control-label">W<sub>1</sub> for D<sub>1</sub></label>
-            <div class="col-sm-3">
-              <input type="number" class="form-control" id="W1" placeholder="Enter W1">
-			     </div> 
-			     <div class="col-sm-1">%</div>
-
+            <div id="W1Par">
+              <label for="W1" class="col-sm-offset-1 col-sm-2 control-label">W<sub>1</sub> for D<sub>1</sub></label>
+              <div class="col-sm-3">
+                <input type="number" class="form-control" id="W1" placeholder="Enter W1">
+                <span id="W1Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+  			     </div> 
+  			     <div class="col-sm-1">%</div>
+           </div>
           </div>
 
            <div class="collapse" id="D1Des">
@@ -232,7 +280,7 @@
           </div> 
 
 
-          <div class="form-group">
+          <div class="form-group has-feedback">
             <label for="D2" class="col-sm-2 control-label">
             <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D2Des" aria-expanded="false" aria-controls="D2Des">
             D<sub>2</sub>
@@ -241,11 +289,16 @@
             <div class="col-sm-3">
               <input type="number" readonly="readyonly" class="form-control" id="D2" placeholder="">
             </div> 
-            <label for="W2" class="col-sm-offset-1 col-sm-2 control-label">W<sub>2</sub> for D<sub>2</sub></label>
-            <div class="col-sm-3">
-              <input type="number" class="form-control" id="W2" placeholder="Enter W2">
-            </div> 
-           <div class="col-sm-1">%</div>
+
+            <div id="W2Par">
+              <label for="W2" class="col-sm-offset-1 col-sm-2 control-label">W<sub>2</sub> for D<sub>2</sub></label>
+              <div class="col-sm-3">
+                <input type="number" class="form-control" id="W2" placeholder="Enter W2">
+                <span id="W2Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+              </div> 
+             <div class="col-sm-1">%</div>
+           </div>
+
           </div>
 
           <div class="collapse" id="D2Des">
@@ -255,7 +308,7 @@
           </div>
 
 
-          <div class="form-group">
+          <div class="form-group has-feedback">
             <label for="D3" class="col-sm-2 control-label">
               <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D3Des" aria-expanded="false" aria-controls="D3Des">
               D<sub>3</sub>
@@ -263,15 +316,19 @@
             </label>
             <div class="col-sm-3">
               <input type="number" readonly="readyonly" class="form-control" id="D3" placeholder="">
-            </div> 
+            </div>
 
-            <label for="W3" class="col-sm-offset-1 col-sm-2 control-label">
-              W<sub>3</sub> for D<sub>3</sub>
-            </label>
-            <div class="col-sm-3">
-              <input type="number" class="form-control" id="W3" placeholder="Enter W3">
-            </div> 
-            <div class="col-sm-1">%</div>
+            <div id="W3Par">
+              <label for="W3" class="col-sm-offset-1 col-sm-2 control-label">
+                W<sub>3</sub> for D<sub>3</sub>
+              </label>
+              <div class="col-sm-3">
+                <input type="number" class="form-control" id="W3" placeholder="Enter W3">
+                <span id="W3Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+              </div> 
+              <div class="col-sm-1">%</div>
+            </div>
+
           </div>
 
           <div class="collapse" id="D3Des">
@@ -281,7 +338,7 @@
           </div>
 
 
-          <div class="form-group">
+          <div class="form-group has-feedback">
             <label for="D4" class="col-sm-2 control-label">
               <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D4Des" aria-expanded="false" aria-controls="D4Des">
               D<sub>4</sub>
@@ -291,14 +348,18 @@
               <input type="number" readonly="readyonly" class="form-control" id="D4" placeholder="">
             </div> 
 
-            <label for="W4" class="col-sm-offset-1 col-sm-2 control-label">
-              W<sub>4</sub> for D<sub>4</sub>
-            </label>
 
-            <div class="col-sm-3">
-              <input type="number" class="form-control" id="W4" placeholder="Enter W4">
-            </div> 
-            <div class="col-sm-1">%</div>
+            <div id="W4Par">
+              <label for="W4" class="col-sm-offset-1 col-sm-2 control-label">
+                W<sub>4</sub> for D<sub>4</sub>
+              </label>
+
+              <div class="col-sm-3">
+                <input type="number" class="form-control" id="W4" placeholder="Enter W4">
+                <span id="W4Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+              </div> 
+              <div class="col-sm-1">%</div>
+           </div>
           </div>
 
           <div class="collapse" id="D4Des">
@@ -307,7 +368,7 @@
             </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group has-feedback">
             <label for="D5" class="col-sm-2 control-label">
               <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D5Des" aria-expanded="false" aria-controls="D5Des">
               D<sub>5</sub>
@@ -317,13 +378,16 @@
               <input type="number" readonly="readyonly" class="form-control" id="D5" placeholder="">
             </div> 
 
-            <label for="W5" class="col-sm-offset-1 col-sm-2 control-label">
-              W<sub>5</sub> for D<sub>5</sub>
-            </label>
-            <div class="col-sm-3">
-              <input type="number" class="form-control" id="W5" placeholder="Enter W5">
-            </div> 
-           <div class="col-sm-1">%</div>    
+            <div id="W5Par">
+              <label for="W5" class="col-sm-offset-1 col-sm-2 control-label">
+                W<sub>5</sub> for D<sub>5</sub>
+              </label>
+              <div class="col-sm-3">
+                <input type="number" class="form-control" id="W5" placeholder="Enter W5">
+                <span id="W5Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+              </div> 
+             <div class="col-sm-1">%</div>
+           </div>
           </div>
 
           <div class="collapse" id="D5Des">
@@ -332,7 +396,7 @@
               </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group has-feedback">
             <label for="D6" class="col-sm-2 control-label">
               <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D6Des" aria-expanded="false" aria-controls="D6Des">
               D<sub>6</sub>
@@ -342,13 +406,17 @@
               <input type="number" readonly="readyonly" class="form-control" id="D6" placeholder="">
             </div> 
 
-            <label for="W6" class="col-sm-offset-1 col-sm-2 control-label">
-              W<sub>6</sub> for D<sub>6</sub>
-            </label>
-            <div class="col-sm-3">
-              <input type="number" class="form-control" id="W6" placeholder="Enter W6">
-            </div> 
-           <div class="col-sm-1">%</div>
+            <div id="W6Par">
+              <label for="W6" class="col-sm-offset-1 col-sm-2 control-label">
+                W<sub>6</sub> for D<sub>6</sub>
+              </label>
+              <div class="col-sm-3">
+                <input type="number" class="form-control" id="W6" placeholder="Enter W6">
+                <span id="W6Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+              </div> 
+             <div class="col-sm-1">%</div>
+           </div>
+
           </div>
 
           <div class="collapse" id="D6Des">
@@ -373,16 +441,21 @@
 
         <div class="form-group">
           <div class="col-sm-offset-5 col-sm-1">
-            <button id="calculateBtn" type="submit" class="btn btn-primary">Calculate DSQI</button>
+            <button id="calculateBtn" type="submit" class="btn btn-primary" disabled="disabled">Calculate DSQI</button >
           </div>
         </div>
-          
+
+        <p id="weightTotal" style="display: none">Weights don't add up to one hundred </p>
+        <p id="invalidWeight" style="display: none">Weights must be greater than 0</p>   
+
         <div class="form-group">
           <label for="DSQI" class="col-sm-2 control-label">DSQI </label>
           <div class="col-sm-3">
             <input type="number" readonly="readyonly" class="form-control" id="DSQI" placeholder="">
           </div>
         </div>
+
+
         </div>
         </form>
 
