@@ -221,12 +221,12 @@
           </div> 
 
         <div class="form-group">
-          <div class="col-sm-offset-3 col-sm-1">
+          <div class="col-sm-offset-5 col-sm-1">
             <button id="sValueBtn" type="submit" class="btn btn-primary">Set S Values</button>
           </div>      
         </div>
 
-        <div class="col-sm-6">
+        <div class="errorText" class="col-sm-6">
           <p id="invalidS" style="display: none">Invalid S input. S values must be greater than zero</p>
           <p id="invalid1" style="display: none">S<sub>1</sub> must be greater than S<sub>2</sub></p>        
           <p id="invalid2" style="display: none">S<sub>1</sub> must be greater than S<sub>3</sub></p> 
@@ -426,7 +426,7 @@
           </div>
 
 
-          <div class="form-group">
+          <div class="form-group" style="display:none">
 
           <label for="WTotal" class="col-sm-offset-4 col-sm-4 control-label">
               Total Weight
@@ -445,8 +445,10 @@
           </div>
         </div>
 
-        <p id="weightTotal" style="display: none">Weights don't add up to one hundred </p>
-        <p id="invalidWeight" style="display: none">Weights must be greater than 0</p>   
+        <div class="errorText" class="col-sm-6">
+          <p id="weightTotal" style="display: none">Weights don't add up to one hundred </p>
+          <p id="invalidWeight" style="display: none">Weights must be greater than 0</p>   
+        </div>
 
         <div class="form-group">
           <label for="DSQI" class="col-sm-2 control-label">DSQI </label>

@@ -96,4 +96,9 @@ body {
 	background-color: blue;
 }
 
+.errorText p{
+  color:red;
+  font-size: 12px;
+}
+
 
