@@ -105,17 +105,6 @@
           <div id="invalid4" class="alert alert-danger" role="alert" style="display: none">S<sub>4</sub> must be greater than S<sub>6</sub></div>
           <div id="invalid5" class="alert alert-danger" role="alert" style="display: none">S<sub>1</sub> must be greater than S<sub>7</sub></div>
 
-            <!--                                    
-        <div class="errorText" class="col-sm-6">
-
-          <p id="invalid" style="display: none">Invalid S input. S values must be greater than zero</p>
-          <p id="invalid1" style="display: none">S<sub>1</sub> must be greater than S<sub>2</sub></p>        
-          <p id="invalid2" style="display: none">S<sub>1</sub> must be greater than S<sub>3</sub></p> 
-          <p id="invalid3" style="display: none">S<sub>4</sub> must be greater than S<sub>5</sub></p> 
-          <p id="invalid4" style="display: none">S<sub>4</sub> must be greater than S<sub>6</sub></p>   
-          <p id="invalid5" style="display: none">S<sub>1</sub> must be greater than S<sub>7</sub></p>  
-        </div>
-       -->
         </div>
         
 
@@ -135,170 +124,10 @@
 		
         <form class="form-horizontal">
         <div id="collapseGroup2">
-          <div class="form-group has-feedback">
-			
-            <label for="D1" class="col-sm-2 control-label">
-              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
-                <a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#D1Des" aria-expanded="false" aria-controls="D1Des">
-                D<sub>1</sub>
-                </a>
-              </span>
-            </label>
-            <div class="col-sm-3">
-              <input type="number" readonly="readyonly" class="form-control" id="D1" placeholder="">
-            </div>
-
-            <div id="W1Par">
-              <label for="W1" class="col-sm-offset-1 col-sm-2 control-label">W<sub>1</sub> for D<sub>1</sub></label>
-              <div class="col-sm-4">
-                <input type="number" class="form-control" id="W1" placeholder="Enter W1">
-                <span id="W1Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
-  			     </div> 
-  			     <!--<div class="col-sm-1">%</div>-->
-           </div>
-          </div>
-
-           <div class="collapse" id="D1Des">
-            <div class="well">
-              <ul>
-                <li>
-                Defintion: Program Structure
-                </li>
-                <li>
-                If the architectural design was developed using a distinct method(e.g. data flow-oriented or object-oriented design), then D<sub>1</sub> = 1, otherwise D<sub>1</sub> = 0. 
-                </li>
-              </ul>
-            </div>
-          </div> 
-
-
-
-
-
-          <div class="form-group has-feedback">
-            <label for="D3" class="col-sm-2 control-label">
-            <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
-              <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D3Des" aria-expanded="false" aria-controls="D3Des">
-              D<sub>3</sub>
-              </a>
-              </span>
-            </label>
-            <div class="col-sm-3">
-              <input type="number" readonly="readyonly" class="form-control" id="D3" placeholder="">
-            </div>
-
-            <div id="W3Par">
-              <label for="W3" class="col-sm-offset-1 col-sm-2 control-label">
-                W<sub>3</sub> for D<sub>3</sub>
-              </label>
-              <div class="col-sm-4">
-                <input type="number" class="form-control" id="W3" placeholder="Enter W3">
-                <span id="W3Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
-              </div> 
-
-            </div>
-
-          </div>
-
-          <div class="collapse" id="D3Des">
-            <div class="well">
-              Modules not Dependent on prior processing: D<sub>3</sub> = 1 - (S<sub>3</sub> / S<sub>1</sub>)
-            </div>
-          </div>
-
-
-          <div class="form-group has-feedback">
-            <label for="D4" class="col-sm-2 control-label">
-            <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
-              <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D4Des" aria-expanded="false" aria-controls="D4Des">
-              D<sub>4</sub>
-              </a>
-              </span>
-            </label>
-            <div class="col-sm-3">
-              <input type="number" readonly="readyonly" class="form-control" id="D4" placeholder="">
-            </div> 
-
-
-            <div id="W4Par">
-              <label for="W4" class="col-sm-offset-1 col-sm-2 control-label">
-                W<sub>4</sub> for D<sub>4</sub>
-              </label>
-
-              <div class="col-sm-4">
-                <input type="number" class="form-control" id="W4" placeholder="Enter W4">
-                <span id="W4Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
-              </div> 
-
-           </div>
-          </div>
-
-          <div class="collapse" id="D4Des">
-            <div class="well">
-              Database size: D<sub>6</sub> = 1 - (S<sub>5</sub> / S<sub>4</sub>)
-            </div>
-          </div>
-
-          <div class="form-group has-feedback">
-            <label for="D5" class="col-sm-2 control-label">
-            <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
-              <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D5Des" aria-expanded="false" aria-controls="D5Des">
-              D<sub>5</sub>
-              </a>
-              </span>
-            </label>
-            <div class="col-sm-3">
-              <input type="number" readonly="readyonly" class="form-control" id="D5" placeholder="">
-            </div> 
-
-            <div id="W5Par">
-              <label for="W5" class="col-sm-offset-1 col-sm-2 control-label">
-                W<sub>5</sub> for D<sub>5</sub>
-              </label>
-              <div class="col-sm-4">
-                <input type="number" class="form-control" id="W5" placeholder="Enter W5">
-                <span id="W5Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
-              </div> 
-
-           </div>
-          </div>
-
-          <div class="collapse" id="D5Des">
-              <div class="well">
-                Database compartmentalization: D<sub>5</sub> = 1 - (S<sub>6</sub> / S<sub>4</sub>)
-              </div>
-          </div>
-
-          <div class="form-group has-feedback">
-            <label for="D6" class="col-sm-2 control-label">
-            <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
-              <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D6Des" aria-expanded="false" aria-controls="D6Des">
-              D<sub>6</sub>
-              </a>
-              </span>
-            </label>
-            <div class="col-sm-3">
-              <input type="number" readonly="readyonly" class="form-control" id="D6" placeholder="">
-            </div> 
-
-            <div id="W6Par">
-              <label for="W6" class="col-sm-offset-1 col-sm-2 control-label">
-                W<sub>6</sub> for D<sub>6</sub>
-              </label>
-              <div class="col-sm-3">
-                <input type="number" class="form-control" id="W6" placeholder="Enter W6">
-                <span id="W6Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
-              </div> 
-
-           </div>
-
-          </div>
-
-          <div class="collapse" id="D6Des">
-            <div class="well">
-              Module entrance/exit characteristic: D<sub>6</sub> = 1 - (S<sub>7</sub> / S<sub>1</sub>)
-            </div>
-          </div>
+        
+        <!-- WD template block -->
+        <div id="WDTemplate">
+        </div>
 
 
           <div class="form-group" style="display:none">
@@ -323,12 +152,6 @@
         <div id="weightTotal" class="alert alert-danger" role="alert" style="display: none">Weights don't add up to one hundred </div>
           <div id="invalidWeight" class="alert alert-danger" role="alert" style="display: none">Weights must be greater than 0</div>
 
-          <!--
-        <div class="errorText" class="col-sm-6">
-          <p id="weightTotal" style="display: none">Weights don't add up to one hundred </p>
-          <p id="invalidWeight" style="display: none">Weights must be greater than 0</p>   
-        </div>
-        -->
 
         <div class="form-group">
           <label for="DSQI" class="col-sm-2 control-label">DSQI </label>
@@ -361,7 +184,7 @@
  
 
 
-<script id="handlebars-demo" type="text/x-handlebars-template">
+<script id="sValueTemplate" type="text/x-handlebars-template">
 
   {{#each blocks}}
 
@@ -407,10 +230,10 @@
     <div class="well">
       <ul>
         <li>
-          {{des.def}}
+          {{des2.def}}
         </li>
         <li>
-          {{des.extra}}
+          {{des2.extra}}
         </li>
       </ul>
     </div>
@@ -420,41 +243,41 @@
 
 </script>
 
+
 <script id="W-and-D-Values" type="text/x-handlebars-template">
 
   {{#each blocks}}
+  <div class="form-group has-feedback">
+    <label for="D{{inc @index}}" class="col-sm-2 control-label">
+      <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
+        <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D{{inc @index}}Des" aria-expanded="false" aria-controls="D{{inc @index}}Des">
+        D<sub>{{inc @index}}</sub>
+        </a>
+    </span>
+    </label>
+    <div class="col-sm-3">
+      <input type="number" readonly="readyonly" class="form-control" id="D{{inc @index}}" placeholder="">
+    </div> 
 
- <div class="form-group has-feedback">
-            <label for="D2" class="col-sm-2 control-label">
-              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
-                <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D2Des" aria-expanded="false" aria-controls="D2Des">
-                D<sub>2</sub>
-                </a>
-            </span>
-            </label>
-            <div class="col-sm-3">
-              <input type="number" readonly="readyonly" class="form-control" id="D2" placeholder="">
-            </div> 
+    <div id="W{{inc @index}}Par">
+      <label for="W{{inc @index}}" class="col-sm-offset-1 col-sm-2 control-label">W<sub>{{inc @index}}</sub> for D<sub>{{inc @index}}</sub></label>
+      <div class="col-sm-4">
+      <div class="input-group">
+        <input type="number" class="form-control" id="W{{inc @index}}" placeholder="Enter W{{inc @index}}">
+        <span id="W{{inc @index}}Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+        <div class="input-group-addon">%</div>
+        </div>
+      </div> 
 
-            <div id="W2Par">
-              <label for="W2" class="col-sm-offset-1 col-sm-2 control-label">W<sub>2</sub> for D<sub>2</sub></label>
-              <div class="col-sm-4">
-              <div class="input-group">
-                <input type="number" class="form-control" id="W2" placeholder="Enter W2">
-                <span id="W2Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
-                <div class="input-group-addon">%</div>
-                </div>
-              </div> 
+    </div>
 
-           </div>
+    </div>
 
-          </div>
-
-          <div class="collapse" id="D2Des">
-            <div class="well">
-              Module Independence: D<sub>2</sub> = 1 - (S<sub>2</sub> / S<sub>1</sub>)
-            </div>
-          </div>
+    <div class="collapse" id="D{{inc @index}}Des">
+    <div class="well">
+      {{des.def}}
+    </div>
+  </div>
 {{/each}}
 
 </script>

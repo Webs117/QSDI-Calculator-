@@ -27,11 +27,7 @@
 	});	
 
 	
-	
-	$("#W1").on("blur", function(){
-		alert("handler for blur called");
-	});
-	
+
 	
 	function totalWeights(){
 		var total = 0;

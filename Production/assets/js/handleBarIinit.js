@@ -2,81 +2,66 @@
     
 
 // Retrieve the template data from the HTML (jQuery is used here).
-var template = $('#handlebars-demo').html();
+var sTemplate = $('#sValueTemplate').html();
+var wdTemplate = $('#W-and-D-Values').html();
+
 
 // Compile the template data into a function
-var templateScript = Handlebars.compile(template);
+var sTemplateScript = Handlebars.compile(sTemplate);
+var wdTemplateScript = Handlebars.compile(wdTemplate);
 
-/*
-var context2 = {
-    blocks:[
-        {
-            sValue:"1",
-            des: {def: "The total number of modules.", extra: "Extra information"},
-            formGroup:"yes"
-        },{
-            sValue:"2",
-            des: {def: "Insert Definition", extra: "Extra information"}
-        },{
-            sValue:"3",
-            des: {def: "Insert Definition", extra: "Extra information"},
-            formGroup:"yes"
-        },{
-            sValue:"4",
-            des: {def: "Insert Definition", extra: "Extra information"}
-        },{
-            sValue:"5",
-            des: {def: "Insert Definition", extra: "Extra information"},
-            formGroup:"yes"
-        },{
-            sValue:"6",
-            des: {def: "Insert Definition", extra: "Extra information"}
-        },{
-            sValue:"7",
-            des: {def: "Insert Definition", extra: "Extra information"},
-            formGroup:"yes"
-        }
-    ]
-};
-*/
-
-var context2 = {
+var sValueBlock = {
     blocks:[
         {
             sValue:"1"
         },{
             sValue:"2",
-            des: {def: "Insert Definition", extra: "Extra information"},
-            des2: {def: "The total number of modules.", extra: "Extra information"}
+            des: {def: "The total number of modules.", extra: "S1 must be greater than S2, S3, S7"},
+            des2: {def: "The number of modules that either rely on correct data input, or produce data to be used elsewhere", extra: "S2 must be less than S1."}
         },{
             sValue:"3",
         },{
             sValue:"4",
-            des: {def: "Insert Definition", extra: "Extra information"},
-            des2: {def: "The total number of modules.", extra: "Extra information"}
+            des: {def: "The number of modules that depend on prior processing", extra: "S3 must be less than S1."},
+            des2: {def: "The number of database items including all attributes attached.", extra: "S4 must be greater than S5 and S6"}
         },{
             sValue:"5",
         },{
             sValue:"6",
-            des: {def: "Insert Definition", extra: "Extra information"},
-            des2: {def: "The total number of modules.", extra: "Extra information"}
+            des: {def: " The number of unique database items", extra: "S5 must be less than S4."},
+            des2: {def: "The number of individual database objects", extra: "S6 must be less than S4."}
         },{
             sValue:"7",
-            des: {def: "Insert Definition", extra: "Extra information"}
+            des: {def: "The number of modules with a single entry and single exit.", extra: "S7 must be less than S1."}
+        }
+    ]
+};
+
+var wdBlock = {
+    blocks:[
+        {
+            sValue:"1",
+            des: {def: "The total number of modules.", extra: "S1 must be greater than S2, S3, S7"}  
+        },{
+            sValue:"2",
+            des: {def: "The total number of modules.", extra: "S1 must be greater than S2, S3, S7"}            
+        },{
+            sValue:"3",
+            des: {def: "The total number of modules.", extra: "S1 must be greater than S2, S3, S7"}              
+        },{
+            sValue:"4",
+            des: {def: "The number of modules that depend on prior processing", extra: "S3 must be less than S1."}
+        },{
+            sValue:"5",
+            des: {def: "The total number of modules.", extra: "S1 must be greater than S2, S3, S7"}              
+        },{
+            sValue:"6",
+            des: {def: " The number of unique database items", extra: "S5 must be less than S4."}
         }
     ]
 };
 
 
-Handlebars.registerHelper("dec", function(value, options)
-{
-    if(value == 0){
-        return parseInt(value) + 1;
-    }else{
-         return parseInt(value) - 1;
-    }
-    
-});
 
 Handlebars.registerHelper("inc", function(value, options)
 {
@@ -115,40 +100,14 @@ Handlebars.registerHelper("odd", function(value, options)
 
 
 
-/*
-var context = { 
-    blocks: [
-
-    {
-        sform: [
-
-            {
-                parLabel: "S1Par" 
-            },
-            {
-
-            }
-
-
-        ]  
-    },
-    {
-
-    }
-
-
-    ]
-
- };
-*/
-
 
 // html = 'My name is Ritesh Kumar. I am a developer.'
-var html = templateScript(context2);
+var sBlockHtml = sTemplateScript(sValueBlock);
+var wdBlockHtml = wdTemplateScript(wdBlock);
 
 // Insert the HTML code into the page
-$("#sValuesTemp").append(html); 	
-    	
+$("#sValuesTemp").append(sBlockHtml); 	
+$("#WDTemplate").append(wdBlockHtml);   	
 
 
 });
