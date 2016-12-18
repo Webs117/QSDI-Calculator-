@@ -41,22 +41,25 @@ var wdBlock = {
     blocks:[
         {
             sValue:"1",
-            des: {def: "The total number of modules.", extra: "S1 must be greater than S2, S3, S7"}  
+            des: {
+                def: "Program Structure.", 
+                extra: "If the architectural design was developed using a distinct method(e.g. data flow-oriented or object-oriented design), then D1 = 1, otherwise D1 = 0. "
+            }  
         },{
             sValue:"2",
-            des: {def: "The total number of modules.", extra: "S1 must be greater than S2, S3, S7"}            
+            des: {def: " Module Independence.", extra: " D2 = 1 - (S2 / S1)"}            
         },{
             sValue:"3",
-            des: {def: "The total number of modules.", extra: "S1 must be greater than S2, S3, S7"}              
+            des: {def: " Modules not Dependent on prior processing.", extra: "D3 = 1 - (S3 / S1)"}              
         },{
             sValue:"4",
-            des: {def: "The number of modules that depend on prior processing", extra: "S3 must be less than S1."}
+            des: {def: "Database size", extra: "D6 = 1 - (S5 / S4)"}
         },{
             sValue:"5",
-            des: {def: "The total number of modules.", extra: "S1 must be greater than S2, S3, S7"}              
+            des: {def: "Database compartmentalization", extra: "D5 = 1 - (S6 / S4)"}              
         },{
             sValue:"6",
-            des: {def: " The number of unique database items", extra: "S5 must be less than S4."}
+            des: {def: "Module entrance/exit characteristic", extra: "D6 = 1 - (S7 / S1)"}
         }
     ]
 };
