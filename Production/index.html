@@ -54,9 +54,11 @@
             <div id="S1Par">
 
               <label for="S1" class="col-sm-2 control-label">
+              <span data-toggle="tooltip"  data-placement="left" title="Click for Help" class="red-tooltip" class="red-tooltip">
         				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S1Des" aria-expanded="false" aria-controls="S1Des">
         					S<sub>1</sub>
         				</a>
+                </span>
               </label>
               <div class="col-sm-3">
                 <input type="number" class="form-control" id="S1" placeholder="Enter S1" min="0" pattern="\d*">
@@ -68,9 +70,11 @@
             <div id="S2Par">
 
   			      <label for="S2" class="col-sm-2 control-label">
+              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
         				<a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#S2Des" aria-expanded="false" aria-controls="S2Des">
         					S<sub>2</sub>
         				</a>
+                </span>
               </label>
               <div class="col-sm-3">
                 <input type="number" class="form-control" id="S2" placeholder="Enter S2" min="0">
@@ -98,9 +102,11 @@
 
             <div id="S3Par">
               <label for="S3" class="col-sm-2 control-label">
+              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
     				    <a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S3Des" aria-expanded="false" aria-controls="S3Des">
     					 S<sub>3</sub>
     				    </a>
+                </span>
   			      </label>
 
               <div class="col-sm-3">
@@ -112,9 +118,11 @@
             <div id="S4Par">
 
         			<label for="S4" class="col-sm-2 control-label">
+              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
         				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S4Des" aria-expanded="false" aria-controls="S4Des">
         					S<sub>4</sub>
         				</a>
+                </span>
         			</label>
               <div class="col-sm-3">
                 <input type="number" class="form-control" id="S4" placeholder="Enter S4" min="0">
@@ -141,9 +149,11 @@
             <div id="S5Par">
 
               <label for="S5" class="col-sm-2 control-label">
+              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
         				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S5Des" aria-expanded="false" aria-controls="S5Des">
         					S<sub>5</sub>
         				</a>
+                </span>
         			</label>
               <div class="col-sm-3">
                 <input type="number" class="form-control" id="S5" placeholder="Enter S5" min="0">
@@ -154,9 +164,11 @@
 
             <div id="S6Par">
               <label for="S6" class="col-sm-2 control-label">
+              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
         				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S6Des" aria-expanded="false" aria-controls="S6Des">
         					S<sub>6</sub>
         				</a>
+                </span>
   			      </label>
 
               <div class="col-sm-3">
@@ -179,15 +191,20 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="S7" class="col-sm-2 control-label">
-				<a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#S7Des" aria-expanded="false" aria-controls="S7Des">
-					S<sub>7</sub>
-				</a>
-			</label>
-            <div class="col-sm-3">
-              <input type="number" class="form-control" id="S7" placeholder="Enter S7" min="0">
-            </div> 
+          <div class="form-group has-feedback">
+            <div id="S7Par">
+              <label for="S7" class="col-sm-2 control-label">
+              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
+  				<a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#S7Des" aria-expanded="false" aria-controls="S7Des">
+  					S<sub>7</sub>
+  				</a>
+          </span>
+  			</label>
+              <div class="col-sm-3">
+                <input type="number" class="form-control" id="S7" placeholder="Enter S7" min="0">
+                <span id="S7Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+              </div>
+              </div> 
           </div>
 		  
 		  <div class="collapse" id="S7Des">
@@ -200,9 +217,11 @@
 
 
           <label for="d1CheckBox" class="col-sm-2 control-label">
+          <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
             <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D1Des2" aria-expanded="false" aria-controls="D1Des2">
               D<sub>1</sub>
             </a>
+            </span>
           </label>
 
           <div class="col-sm-4">
@@ -216,26 +235,50 @@
 
       <div class="collapse" id="D1Des2">
             <div class="well">
-              Program Structure. If the architectural design was developed using a distinct method(e.g. data flow-oriented or object-oriented design), then D<sub>1</sub> = 1, otherwise D<sub>1</sub> = 0
+              <ul>
+                <li>
+                Definition: Program Structure
+                </li>
+                <li>
+                If the architectural design was developed using a distinct method(e.g. data flow-oriented or object-oriented design), then check the box (D<sub>1</sub> = 1), otherwise keep unchecked (D<sub>1</sub> = 0). 
+                </li>
+              </ul>
             </div>
           </div> 
 
         <div class="form-group">
           <div class="col-sm-offset-5 col-sm-1">
             <button id="sValueBtn" type="submit" class="btn btn-primary">Set S Values</button>
-          </div>      
+          </div>   
+          <div class="col-sm-offset-1 col-sm-1">
+
+            <span id="successCheck" class="glyphicon glyphicon-ok text-success successPadding" aria-hidden="true" style="display: none"></span>
+  
+          </div>
         </div>
 
+          
+          <div id="invalidS" class="alert alert-danger" role="alert" style="display: none">Invalid S input. S values must be greater than zero</div>
+          <div id="invalid1" class="alert alert-danger" role="alert" style="display: none">S<sub>1</sub> must be greater than S<sub>2</sub></div>
+          <div id="invalid2" class="alert alert-danger" role="alert" style="display: none">S<sub>1</sub> must be greater than S<sub>3</sub></div>
+          <div id="invalid3" class="alert alert-danger" role="alert" style="display: none">S<sub>4</sub> must be greater than S<sub>5</sub></div>
+          <div id="invalid4" class="alert alert-danger" role="alert" style="display: none">S<sub>4</sub> must be greater than S<sub>6</sub></div>
+          <div id="invalid5" class="alert alert-danger" role="alert" style="display: none">S<sub>1</sub> must be greater than S<sub>7</sub></div>
+
+            <!--                                    
         <div class="errorText" class="col-sm-6">
-          <p id="invalidS" style="display: none">Invalid S input. S values must be greater than zero</p>
+
+          <p id="invalid" style="display: none">Invalid S input. S values must be greater than zero</p>
           <p id="invalid1" style="display: none">S<sub>1</sub> must be greater than S<sub>2</sub></p>        
           <p id="invalid2" style="display: none">S<sub>1</sub> must be greater than S<sub>3</sub></p> 
           <p id="invalid3" style="display: none">S<sub>4</sub> must be greater than S<sub>5</sub></p> 
           <p id="invalid4" style="display: none">S<sub>4</sub> must be greater than S<sub>6</sub></p>   
           <p id="invalid5" style="display: none">S<sub>1</sub> must be greater than S<sub>7</sub></p>  
         </div>
-       
+       -->
         </div>
+        
+
         </form>
 		
 		<!-- divider -->
@@ -255,9 +298,11 @@
           <div class="form-group has-feedback">
 			
             <label for="D1" class="col-sm-2 control-label">
-            <a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#D1Des" aria-expanded="false" aria-controls="D1Des">
-            D<sub>1</sub>
-            </a>
+              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
+                <a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#D1Des" aria-expanded="false" aria-controls="D1Des">
+                D<sub>1</sub>
+                </a>
+              </span>
             </label>
             <div class="col-sm-3">
               <input type="number" readonly="readyonly" class="form-control" id="D1" placeholder="">
@@ -265,26 +310,35 @@
 
             <div id="W1Par">
               <label for="W1" class="col-sm-offset-1 col-sm-2 control-label">W<sub>1</sub> for D<sub>1</sub></label>
-              <div class="col-sm-3">
+              <div class="col-sm-4">
                 <input type="number" class="form-control" id="W1" placeholder="Enter W1">
                 <span id="W1Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
   			     </div> 
-  			     <div class="col-sm-1">%</div>
+  			     <!--<div class="col-sm-1">%</div>-->
            </div>
           </div>
 
            <div class="collapse" id="D1Des">
             <div class="well">
-               Program Structure. If the architectural design was developed using a distinct method(e.g. data flow-oriented or object-oriented design), then D<sub>1</sub> = 1, otherwise D<sub>1</sub> = 0
+              <ul>
+                <li>
+                Defintion: Program Structure
+                </li>
+                <li>
+                If the architectural design was developed using a distinct method(e.g. data flow-oriented or object-oriented design), then D<sub>1</sub> = 1, otherwise D<sub>1</sub> = 0. 
+                </li>
+              </ul>
             </div>
           </div> 
 
 
           <div class="form-group has-feedback">
             <label for="D2" class="col-sm-2 control-label">
-            <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D2Des" aria-expanded="false" aria-controls="D2Des">
-            D<sub>2</sub>
-            </a>
+              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
+                <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D2Des" aria-expanded="false" aria-controls="D2Des">
+                D<sub>2</sub>
+                </a>
+            </span>
             </label>
             <div class="col-sm-3">
               <input type="number" readonly="readyonly" class="form-control" id="D2" placeholder="">
@@ -292,11 +346,14 @@
 
             <div id="W2Par">
               <label for="W2" class="col-sm-offset-1 col-sm-2 control-label">W<sub>2</sub> for D<sub>2</sub></label>
-              <div class="col-sm-3">
+              <div class="col-sm-4">
+              <div class="input-group">
                 <input type="number" class="form-control" id="W2" placeholder="Enter W2">
                 <span id="W2Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+                <div class="input-group-addon">%</div>
+                </div>
               </div> 
-             <div class="col-sm-1">%</div>
+
            </div>
 
           </div>
@@ -310,9 +367,11 @@
 
           <div class="form-group has-feedback">
             <label for="D3" class="col-sm-2 control-label">
+            <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
               <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D3Des" aria-expanded="false" aria-controls="D3Des">
               D<sub>3</sub>
               </a>
+              </span>
             </label>
             <div class="col-sm-3">
               <input type="number" readonly="readyonly" class="form-control" id="D3" placeholder="">
@@ -322,11 +381,11 @@
               <label for="W3" class="col-sm-offset-1 col-sm-2 control-label">
                 W<sub>3</sub> for D<sub>3</sub>
               </label>
-              <div class="col-sm-3">
+              <div class="col-sm-4">
                 <input type="number" class="form-control" id="W3" placeholder="Enter W3">
                 <span id="W3Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
               </div> 
-              <div class="col-sm-1">%</div>
+
             </div>
 
           </div>
@@ -340,9 +399,11 @@
 
           <div class="form-group has-feedback">
             <label for="D4" class="col-sm-2 control-label">
+            <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
               <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D4Des" aria-expanded="false" aria-controls="D4Des">
               D<sub>4</sub>
               </a>
+              </span>
             </label>
             <div class="col-sm-3">
               <input type="number" readonly="readyonly" class="form-control" id="D4" placeholder="">
@@ -354,11 +415,11 @@
                 W<sub>4</sub> for D<sub>4</sub>
               </label>
 
-              <div class="col-sm-3">
+              <div class="col-sm-4">
                 <input type="number" class="form-control" id="W4" placeholder="Enter W4">
                 <span id="W4Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
               </div> 
-              <div class="col-sm-1">%</div>
+
            </div>
           </div>
 
@@ -370,9 +431,11 @@
 
           <div class="form-group has-feedback">
             <label for="D5" class="col-sm-2 control-label">
+            <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
               <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D5Des" aria-expanded="false" aria-controls="D5Des">
               D<sub>5</sub>
               </a>
+              </span>
             </label>
             <div class="col-sm-3">
               <input type="number" readonly="readyonly" class="form-control" id="D5" placeholder="">
@@ -382,11 +445,11 @@
               <label for="W5" class="col-sm-offset-1 col-sm-2 control-label">
                 W<sub>5</sub> for D<sub>5</sub>
               </label>
-              <div class="col-sm-3">
+              <div class="col-sm-4">
                 <input type="number" class="form-control" id="W5" placeholder="Enter W5">
                 <span id="W5Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
               </div> 
-             <div class="col-sm-1">%</div>
+
            </div>
           </div>
 
@@ -398,9 +461,11 @@
 
           <div class="form-group has-feedback">
             <label for="D6" class="col-sm-2 control-label">
+            <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
               <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D6Des" aria-expanded="false" aria-controls="D6Des">
               D<sub>6</sub>
               </a>
+              </span>
             </label>
             <div class="col-sm-3">
               <input type="number" readonly="readyonly" class="form-control" id="D6" placeholder="">
@@ -414,7 +479,7 @@
                 <input type="number" class="form-control" id="W6" placeholder="Enter W6">
                 <span id="W6Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
               </div> 
-             <div class="col-sm-1">%</div>
+
            </div>
 
           </div>
@@ -445,10 +510,15 @@
           </div>
         </div>
 
+        <div id="weightTotal" class="alert alert-danger" role="alert" style="display: none">Weights don't add up to one hundred </div>
+          <div id="invalidWeight" class="alert alert-danger" role="alert" style="display: none">Weights must be greater than 0</div>
+
+          <!--
         <div class="errorText" class="col-sm-6">
           <p id="weightTotal" style="display: none">Weights don't add up to one hundred </p>
           <p id="invalidWeight" style="display: none">Weights must be greater than 0</p>   
         </div>
+        -->
 
         <div class="form-group">
           <label for="DSQI" class="col-sm-2 control-label">DSQI </label>

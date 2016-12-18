@@ -125,7 +125,7 @@ DO NOT EDIT ANYTHING BELOW
 	function auth(){
         var pass = true;
 		for(var i=0; i < 7; i++){
-    		if(rawSvalues[i] < 0 || rawSvalues[i] == NaN){
+    		if(rawSvalues[i] < 0 || isNaN(rawSvalues[i]) ){
     			console.log("S" + (i+1) + " is invalid");
                 pass = false; 
     		}

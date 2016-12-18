@@ -1,5 +1,10 @@
  $(document).ready(function(){
     
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
+    })
+
+
 	var weights = [];
 	
 	var rawSvalues = [];
@@ -22,11 +27,11 @@
 	});	
 
 	
-	/*
+	
 	$("#W1").on("blur", function(){
 		alert("handler for blur called");
 	});
-	*/
+	
 	
 	function totalWeights(){
 		var total = 0;
@@ -40,7 +45,7 @@
 	function auth(){
         var pass = true;
 		for(var i=0; i < 7; i++){
-    		if(rawSvalues[i] < 0 || rawSvalues[i] == NaN){
+    		if(rawSvalues[i] < 0 || isNaN(rawSvalues[i]) ){
                 $("#S" + (i+1) +"Par").addClass("has-error");
                 $("#S" + (i+1) +"Err").show();
                 pass = false; 
@@ -80,9 +85,9 @@
     function weightAuth(){
 
         var pass = true;
-        //check for negative weights to avoid -100 and 200
+
         for (var i = 0; i < 6; i++) {
-            if(weights[i] < 1 || weights[i] == NaN){
+            if(weights[i] < 1 || isNaN(weights[i]) ){
                 $("#W" + (i+1) +"Par").addClass("has-error");
                 $("#W" + (i+1) +"Err").show();
                 pass = false; 
@@ -136,6 +141,7 @@
             $("#S" + (j+1) +"Par").removeClass("has-error");
             $("#S" + (j+1) +"Err").hide();                    
         }        
+        $("#successCheck").hide();
 
     	//check s-value 
 		var pass = auth();
@@ -185,6 +191,9 @@
             if($("#calculateBtn").prop("disabled")){
                 $("#calculateBtn").removeAttr("disabled");
             }
+
+            $("#successCheck").show("fast");
+            $('#collapseGroup').find('.collapse.in').collapse('hide');
 
             //update d values 
             for(var i=0; i < 6; i++){
@@ -238,6 +247,7 @@
                 for (var i = 0; i < 6; i++) {
                     DSQI += (dValues[i] * (weights[i] / 100));
                 }
+                $('#collapseGroup2').find('.collapse.in').collapse('hide');
                 $("#DSQI").val(DSQI);
             }else{
                 console.log("Weights don't add up to 100")

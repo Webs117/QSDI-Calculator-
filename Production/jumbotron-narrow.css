@@ -98,7 +98,22 @@ body {
 
 .errorText p{
   color:red;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
+.successPadding {
+    padding-top:7px;
+    padding-left:10px;
 
+}
+
+.red-tooltip + .tooltip > .tooltip-inner {background-color: #5bc0de;}
+
+.well{
+  text-align: left;
+}
+
+.glyphicon-remove{
+  margin: 0 20px 0 0;
+}

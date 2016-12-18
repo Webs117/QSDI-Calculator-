@@ -172,7 +172,7 @@ DO NOT EDIT ANYTHING BELOW
 		var pass = true;
 		//check for negative weights to avoid -100 and 200
     	for (var i = 0; i < 6; i++) {
-    		if(weights[i] < 1 || weights[i] == NaN){
+    		if(weights[i] < 1 || isNaN(weights[i]) ){
     			console.log("W" + (i+1) + " is invalid");
                 pass = false; 
     		}
