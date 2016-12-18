@@ -48,170 +48,10 @@
 		
 		<form class="form-horizontal">
         <div id="collapseGroup">
-		
-          <div class="form-group has-feedback">
 
-            <div id="S1Par">
-
-              <label for="S1" class="col-sm-2 control-label">
-              <span data-toggle="tooltip"  data-placement="left" title="Click for Help" class="red-tooltip" class="red-tooltip">
-        				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S1Des" aria-expanded="false" aria-controls="S1Des">
-        					S<sub>1</sub>
-        				</a>
-                </span>
-              </label>
-              <div class="col-sm-3">
-                <input type="number" class="form-control" id="S1" placeholder="Enter S1" min="0" pattern="\d*">
-                <span id="S1Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
-              </div>
-
-            </div>
-
-            <div id="S2Par">
-
-  			      <label for="S2" class="col-sm-2 control-label">
-              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
-        				<a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#S2Des" aria-expanded="false" aria-controls="S2Des">
-        					S<sub>2</sub>
-        				</a>
-                </span>
-              </label>
-              <div class="col-sm-3">
-                <input type="number" class="form-control" id="S2" placeholder="Enter S2" min="0">
-                <span id="S2Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
-              </div> 
-
-            </div>
-
-          </div>
-
-           <div class="collapse" id="S1Des">
-            <div class="well">
-              The total number of modules. S<sub>1</sub> must be greater than S<sub>2</sub>, S<sub>3</sub>, S<sub>7</sub>
-            </div>
-          </div> 
-
-          <div class="collapse" id="S2Des">
-            <div class="well">
-              The number of modules that either rely on correct data input, or produce data to be used elsewhere. S<sub>2</sub> must be less than S<sub>1</sub>.
-            </div>
-          </div>
-
-
-          <div class="form-group has-feedback">
-
-            <div id="S3Par">
-              <label for="S3" class="col-sm-2 control-label">
-              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
-    				    <a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S3Des" aria-expanded="false" aria-controls="S3Des">
-    					 S<sub>3</sub>
-    				    </a>
-                </span>
-  			      </label>
-
-              <div class="col-sm-3">
-                <input type="number" class="form-control" id="S3" placeholder="Enter S3" min="0">
-                <span id="S3Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
-              </div> 
-			      </div>
-
-            <div id="S4Par">
-
-        			<label for="S4" class="col-sm-2 control-label">
-              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
-        				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S4Des" aria-expanded="false" aria-controls="S4Des">
-        					S<sub>4</sub>
-        				</a>
-                </span>
-        			</label>
-              <div class="col-sm-3">
-                <input type="number" class="form-control" id="S4" placeholder="Enter S4" min="0">
-                <span id="S4Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
-              </div> 
-
-            </div>
-
-          </div>
-		  
-		      <div class="collapse" id="S3Des">
-            <div class="well">
-              The number of modules that depend on prior processing. S<sub>2</sub> must be less than S<sub>1</sub>.
-            </div>
-          </div> 
-
-          <div class="collapse" id="S4Des">
-            <div class="well">
-              The number of database items including all attributes attached. S<sub>4</sub> must be greater than S<sub>5</sub> and S<sub>6</sub>
-            </div>
-          </div>
-
-          <div class="form-group has-feedback">
-            <div id="S5Par">
-
-              <label for="S5" class="col-sm-2 control-label">
-              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
-        				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S5Des" aria-expanded="false" aria-controls="S5Des">
-        					S<sub>5</sub>
-        				</a>
-                </span>
-        			</label>
-              <div class="col-sm-3">
-                <input type="number" class="form-control" id="S5" placeholder="Enter S5" min="0">
-                <span id="S5Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
-              </div> 
-
-			      </div>
-
-            <div id="S6Par">
-              <label for="S6" class="col-sm-2 control-label">
-              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
-        				<a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S6Des" aria-expanded="false" aria-controls="S6Des">
-        					S<sub>6</sub>
-        				</a>
-                </span>
-  			      </label>
-
-              <div class="col-sm-3">
-                <input type="number" class="form-control" id="S6" placeholder="Enter S6" min="0">
-                <span id="S6Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
-              </div>
-            </div>
-
-          </div>
-		  
-		  <div class="collapse" id="S5Des">
-            <div class="well">
-              The number of unique database items. S<sub>5</sub> must be less than S<sub>4</sub>.
-            </div>
-          </div> 
-
-          <div class="collapse" id="S6Des">
-            <div class="well">
-              The number of individual database objects. S<sub>6</sub> must be less than S<sub>4</sub>.
-            </div>
-          </div>
-
-          <div class="form-group has-feedback">
-            <div id="S7Par">
-              <label for="S7" class="col-sm-2 control-label">
-              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
-  				<a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#S7Des" aria-expanded="false" aria-controls="S7Des">
-  					S<sub>7</sub>
-  				</a>
-          </span>
-  			</label>
-              <div class="col-sm-3">
-                <input type="number" class="form-control" id="S7" placeholder="Enter S7" min="0">
-                <span id="S7Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
-              </div>
-              </div> 
-          </div>
-		  
-		  <div class="collapse" id="S7Des">
-            <div class="well">
-              The number of modules with a single entry and single exit. S<sub>7</sub> must be less than S<sub>1</sub>.
-            </div>
-          </div> 
+        <div id ="sValuesTemp"> 
+          <!-- handle bar template goes here -->
+        </div>
 
         <div class="form-group">
 
@@ -332,37 +172,7 @@
           </div> 
 
 
-          <div class="form-group has-feedback">
-            <label for="D2" class="col-sm-2 control-label">
-              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
-                <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D2Des" aria-expanded="false" aria-controls="D2Des">
-                D<sub>2</sub>
-                </a>
-            </span>
-            </label>
-            <div class="col-sm-3">
-              <input type="number" readonly="readyonly" class="form-control" id="D2" placeholder="">
-            </div> 
 
-            <div id="W2Par">
-              <label for="W2" class="col-sm-offset-1 col-sm-2 control-label">W<sub>2</sub> for D<sub>2</sub></label>
-              <div class="col-sm-4">
-              <div class="input-group">
-                <input type="number" class="form-control" id="W2" placeholder="Enter W2">
-                <span id="W2Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
-                <div class="input-group-addon">%</div>
-                </div>
-              </div> 
-
-           </div>
-
-          </div>
-
-          <div class="collapse" id="D2Des">
-            <div class="well">
-              Module Independence: D<sub>2</sub> = 1 - (S<sub>2</sub> / S<sub>1</sub>)
-            </div>
-          </div>
 
 
           <div class="form-group has-feedback">
@@ -547,8 +357,114 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="dist/js/bootstrap.min.js"></script>
 
-    <script src="assets/js/DSQIcalculator.js"></script>
-	<script src="assets/js/Test-Cases/testCases.js"></script>
+    <script src="assets/js/handlebars-v4.0.5.js"></script> 
+ 
+
+
+<script id="handlebars-demo" type="text/x-handlebars-template">
+
+  {{#each blocks}}
+
+{{#if (odd @index) }}
+    <div class="form-group has-feedback">
+{{/if}}
+    <div id="S{{inc @index}}Par">
+
+      <label for="S{{inc @index}}" class="col-sm-2 control-label">
+      <span data-toggle="tooltip"  data-placement="left" title="Click for Help" class="red-tooltip" class="red-tooltip">
+        <a class="btn btn-info btn-xs" role="button" data-toggle="collapse" href="#S{{inc @index}}Des" aria-expanded="false" aria-controls="S{{inc @index}}Des">
+          S<sub>{{inc @index}}</sub>
+        </a>
+        </span>
+      </label>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" id="S{{inc @index}}" placeholder="Enter S1" min="0" pattern="\d*">
+        <span id="S{{inc @index}}Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+      </div>
+
+    </div>
+
+ {{#if (even @index) }}   
+  </div>
+{{/if}}
+
+{{#if (even @index) }}
+   <div class="collapse" id="S{{@index}}Des">
+    <div class="well">
+      <ul>
+        <li>
+          {{des.def}}
+        </li>
+        <li>
+          {{des.extra}}
+        </li>
+      </ul>
+    </div>
+  </div> 
+
+
+  <div class="collapse" id="S{{inc @index}}Des">
+    <div class="well">
+      <ul>
+        <li>
+          {{des.def}}
+        </li>
+        <li>
+          {{des.extra}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  {{/if}}
+{{/each}}
+
+</script>
+
+<script id="W-and-D-Values" type="text/x-handlebars-template">
+
+  {{#each blocks}}
+
+ <div class="form-group has-feedback">
+            <label for="D2" class="col-sm-2 control-label">
+              <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
+                <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D2Des" aria-expanded="false" aria-controls="D2Des">
+                D<sub>2</sub>
+                </a>
+            </span>
+            </label>
+            <div class="col-sm-3">
+              <input type="number" readonly="readyonly" class="form-control" id="D2" placeholder="">
+            </div> 
+
+            <div id="W2Par">
+              <label for="W2" class="col-sm-offset-1 col-sm-2 control-label">W<sub>2</sub> for D<sub>2</sub></label>
+              <div class="col-sm-4">
+              <div class="input-group">
+                <input type="number" class="form-control" id="W2" placeholder="Enter W2">
+                <span id="W2Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+                <div class="input-group-addon">%</div>
+                </div>
+              </div> 
+
+           </div>
+
+          </div>
+
+          <div class="collapse" id="D2Des">
+            <div class="well">
+              Module Independence: D<sub>2</sub> = 1 - (S<sub>2</sub> / S<sub>1</sub>)
+            </div>
+          </div>
+{{/each}}
+
+</script>
+
+
+
+  <script src="assets/js/handleBarIinit.js"></script>
+
+      <script src="assets/js/DSQIcalculator.js"></script>
+  <script src="assets/js/Test-Cases/testCases.js"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
