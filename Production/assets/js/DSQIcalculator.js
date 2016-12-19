@@ -50,28 +50,61 @@
 
         if(pass == false){
             $( "#invalidS" ).show("slow");
-        }
+        }else{
+			//passed negative and empty case 
+			//check for specific S value cases
+			
+			if(rawSvalues[0] < 1){
+				//s1 must be greater than 0
+				
+				
+				if($("#S1Par").hasClass("has-error")){
+					//already highlighted
+				}else{
+					$("#S" + (1) +"Par").addClass("has-error");
+					$("#S" + (1) +"Err").show();
+					$( "#invalid6" ).show("slow");
+				}
+				
+				pass = false; 
+			}
+			
+			if(rawSvalues[3] < 1){
+				//s1 must be greater than 0
+				
+				if($("#S4Par").hasClass("has-error")){
+					//already highlighted
+				}else{
+					$("#S" + (4) +"Par").addClass("has-error");
+					$("#S" + (4) +"Err").show();
+					$( "#invalid7" ).show("slow");
+				}
+				pass = false; 
+			}
 
-    	if(rawSvalues[0] < rawSvalues[1]){
-            $( "#invalid1" ).show("slow");
-            pass = false; 
-    	}
-    	if(rawSvalues[0] < rawSvalues[2]){
-            $( "#invalid2" ).show("slow");
-            pass = false; 
-    	}
-    	if(rawSvalues[3] < rawSvalues[4]){
-            $( "#invalid3" ).show( "slow");
-            pass = false; 
-    	}
-    	if(rawSvalues[3] < rawSvalues[5]){
-            $( "#invalid4" ).show( "slow");
-            pass = false; 
-    	}
-    	if(rawSvalues[0] < rawSvalues[6]){
-            $( "#invalid5" ).show( "slow");
-            pass = false; 
-    	}
+			if(rawSvalues[0] < rawSvalues[1]){
+				$( "#invalid1" ).show("slow");
+				pass = false; 
+			}
+			if(rawSvalues[0] < rawSvalues[2]){
+				$( "#invalid2" ).show("slow");
+				pass = false; 
+			}
+			if(rawSvalues[3] < rawSvalues[4]){
+				$( "#invalid3" ).show( "slow");
+				pass = false; 
+			}
+			if(rawSvalues[3] < rawSvalues[5]){
+				$( "#invalid4" ).show( "slow");
+				pass = false; 
+			}
+			if(rawSvalues[0] < rawSvalues[6]){
+				$( "#invalid5" ).show( "slow");
+				pass = false; 
+			}
+		}
+		
+    	
 
         return pass;
 
@@ -101,14 +134,12 @@
 
     	//handle d value 
     	if($("#d1CheckBox").is(":checked")){
-			console.log("checked");
 			if( dValues.length < 1){
 				dValues.push(1.0);
 			}else{
 				dValues[0] = 1.0;
 			}
 		}else{
-			console.log("not checked");
 		    if( dValues.length < 1){
 				dValues.push(0.0);
 			}else{
@@ -130,15 +161,18 @@
 
         //reset auth
         $( "#invalidS" ).hide();
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 7; i++) {
              $( "#invalid" + (i+1)).hide();    
         }
         for (var j = 0; j < 7; j++) {
             $("#S" + (j+1) +"Par").removeClass("has-error");
             $("#S" + (j+1) +"Err").hide();                    
-        }        
-        $("#successCheck").hide();
+        }       
 
+		//hide check marks
+        $("#successCheck").hide();
+		$("#dsqiSuccessCheck").hide();
+		
     	//check s-value 
 		var pass = auth();
         if(pass){
@@ -188,16 +222,16 @@
                 $("#calculateBtn").removeAttr("disabled");
             }
 
+			//show s-value check mark
             $("#successCheck").show("fast");
             $('#collapseGroup').find('.collapse.in').collapse('hide');
 
             //update d values 
             for(var i=0; i < 6; i++){
-                $("#D" + (i + 1)).val(dValues[i]);
+                $("#D" + (i + 1)).val(dValues[i].toFixed(4));
             }
 
         }else{
-            console.log("failed S-Values Validation");
 
             //Disable DSQI Button
             if($("#calculateBtn").prop("disabled") == false){
@@ -228,6 +262,7 @@
         //reset Weight auth 
         $( "#weightTotal" ).hide();
         $( "#invalidWeight" ).hide();
+		$("#dsqiSuccessCheck").hide();
 
         for (var j = 0; j < 7; j++) {
             $("#W" + (j+1) +"Par").removeClass("has-error");
@@ -244,13 +279,12 @@
                     DSQI += (dValues[i] * (weights[i] / 100));
                 }
                 $('#collapseGroup2').find('.collapse.in').collapse('hide');
-                $("#DSQI").val(DSQI);
+				$("#dsqiSuccessCheck").show();
+                $("#DSQI").val(DSQI.toFixed(4));
             }else{
-                console.log("Weights don't add up to 100")
                 $( "#weightTotal" ).show("Slow");
             }
         }else{
-            console.log("Invalid weights");
             $( "#invalidWeight" ).show("Slow");
         }
 

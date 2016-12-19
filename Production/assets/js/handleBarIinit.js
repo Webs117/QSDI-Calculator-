@@ -32,7 +32,7 @@ var sValueBlock = {
             des2: {def: "The number of individual database objects", extra: "S6 must be less than S4."}
         },{
             sValue:"7",
-            des: {def: "The number of modules with a single entry and single exit.", extra: "S7 must be less than S1."}
+            des2: {def: "The number of modules with a single entry and single exit.", extra: "S7 must be less than S1."}
         }
     ]
 };
@@ -50,7 +50,7 @@ var wdBlock = {
             des: {def: " Module Independence.", extra: " D2 = 1 - (S2 / S1)"}            
         },{
             sValue:"3",
-            des: {def: " Modules not Dependent on prior processing.", extra: "D3 = 1 - (S3 / S1)"}              
+            des: {def: " Modules not dependent on prior processing.", extra: "D3 = 1 - (S3 / S1)"}              
         },{
             sValue:"4",
             des: {def: "Database size", extra: "D6 = 1 - (S5 / S4)"}
@@ -78,6 +78,7 @@ Handlebars.registerHelper("even", function(value, options)
     var temp = parseInt(value) + 1;
 
     //hard code seven to end since odd number of S values 
+	// bug: creates two S6Des accoridon boxes
     if(temp == 7){
         pass = true;
     }else{

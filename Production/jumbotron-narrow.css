@@ -3,7 +3,7 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   
-  background-color: red;
+  background-color: #839192;
   background-image:
     radial-gradient(
        #999,
@@ -58,7 +58,7 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
-  text-align: center;
+  /*text-align: center;*/
   border-bottom: 1px solid black;
   background-color: white;
 }
@@ -102,10 +102,25 @@ body {
   font-weight: bold;
 }
 
-.successPadding {
+#successCheck {
     padding-top:7px;
-    padding-left:10px;
+    padding-left:15px;
 
+}
+
+#dsqiSuccessCheck {
+    padding-top:7px;
+    padding-left:30px;
+
+}
+
+#introText {
+	border-bottom: 1px solid black
+}
+#introText  p {
+	text-align:left;
+	font-size: 14px;
+	font-weight: normal;
 }
 
 .red-tooltip + .tooltip > .tooltip-inner {background-color: #5bc0de;}
@@ -114,6 +129,16 @@ body {
   text-align: left;
 }
 
-.glyphicon-remove{
+.extraSpace{
   margin: 0 20px 0 0;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }

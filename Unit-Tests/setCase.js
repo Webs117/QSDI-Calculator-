@@ -202,12 +202,14 @@ DO NOT EDIT ANYTHING BELOW
 	    
 			console.log("S Value Array: " + rawSvalues.toString());	
 			console.log("D Value Array: " + dValues.toString());
-			console.log("-------------------------------------------");
+			console.log("Pass case");
+			
 		
 		}else{
 			console.log("failed S-Values Validation");
+			console.log("S Value Array: " + rawSvalues.toString());	
 		}
-    	
+    	console.log("-------------------------------------------");
 		
 		
 	}

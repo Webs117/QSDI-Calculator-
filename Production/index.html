@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+    <meta name="description" content="DSQI Calculator">
+	<meta name="keywords" content="DSQI,Calculator,tinytools">
+    <meta name="author" content="Adam Giaccaglia">
+    <link rel="icon" href="assets/img/faviconPlus.ico">
 
-    <title>Narrow Jumbotron Template for Bootstrap</title>
+    <title>DSQI Calculator</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -39,11 +40,32 @@
 
 
       <div class="jumbotron">
-        <h1>DSQI Calculator</h1>
-        <p class="lead">Insert appropiate values </p>
+	  
 
+        <h1 class="text-center">DSQI Calculator</h1>
+		<!--
+		<div id="introText" class="row">
+        <p class="lead">DSQI evaluates a program’s:</p>
+		<ul>
+			<li>
+			Design Structure
+			</li>
+			<li>
+			Efficiency of Modules
+			</li>
+		</ul>
+
+		<p>DSQI result will be between 0 and 1. The closer to 1, the higher the quality.</p>
+		<p>Input descriptions can be found by clicking on the blue buttons next to each input field.</p>
+		<p>To update S-Values for D-Value and DSQI calculations click “Set S Values” button.</p>
+	  </div>
+	  
+	  -->
+	  
+	  <br/>
+	  <br/>
         <div class="row">
-			<h3 class="col-sm-5">S Values</h3>      
+			<h3 class="col-sm-5 text-center">S-Values</h3>      
         </div>
 		
 		<form class="form-horizontal">
@@ -92,7 +114,7 @@
           </div>   
           <div class="col-sm-offset-1 col-sm-1">
 
-            <span id="successCheck" class="glyphicon glyphicon-ok text-success successPadding" aria-hidden="true" style="display: none"></span>
+            <span id="successCheck" class="glyphicon glyphicon-ok text-success" aria-hidden="true" style="display: none"></span>
   
           </div>
         </div>
@@ -104,7 +126,8 @@
           <div id="invalid3" class="alert alert-danger" role="alert" style="display: none">S<sub>4</sub> must be greater than S<sub>5</sub></div>
           <div id="invalid4" class="alert alert-danger" role="alert" style="display: none">S<sub>4</sub> must be greater than S<sub>6</sub></div>
           <div id="invalid5" class="alert alert-danger" role="alert" style="display: none">S<sub>1</sub> must be greater than S<sub>7</sub></div>
-
+          <div id="invalid6" class="alert alert-danger" role="alert" style="display: none">S<sub>1</sub> must be greater than 0</div>
+	      <div id="invalid7" class="alert alert-danger" role="alert" style="display: none">S<sub>4</sub> must be greater than 0</div>
         </div>
         
 
@@ -118,8 +141,8 @@
 
 
         <div class="row">
-        <h3 class="col-sm-5">D Values</h3>
-        <h3 class="col-sm-5">Weights</h3>       
+        <h3 class="col-sm-5 text-center">D-Values</h3>
+        <h3 class="col-sm-7 text-center">Weights    <small>       (Must Total 100%)</small></h3>       
         </div>
 		
         <form class="form-horizontal">
@@ -147,6 +170,9 @@
           <div class="col-sm-offset-5 col-sm-1">
             <button id="calculateBtn" type="submit" class="btn btn-primary" disabled="disabled">Calculate DSQI</button >
           </div>
+		  <div class="col-sm-offset-1 col-sm-1">
+            <span id="dsqiSuccessCheck" class="glyphicon glyphicon-ok text-success successPadding" aria-hidden="true" style="display: none"></span>
+		  </div>
         </div>
 
         <div id="weightTotal" class="alert alert-danger" role="alert" style="display: none">Weights don't add up to one hundred </div>
@@ -201,7 +227,7 @@
         </span>
       </label>
       <div class="col-sm-3">
-        <input type="number" class="form-control" id="S{{inc @index}}" placeholder="Enter S1" min="0" pattern="\d*">
+        <input type="number" class="form-control" id="S{{inc @index}}" placeholder="Enter S{{inc @index}}" min="0" pattern="\d*">
         <span id="S{{inc @index}}Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
       </div>
 
@@ -264,7 +290,7 @@
       <div class="col-sm-4">
       <div class="input-group">
         <input type="number" class="form-control" id="W{{inc @index}}" placeholder="Enter W{{inc @index}}">
-        <span id="W{{inc @index}}Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false"></span>
+        <span id="W{{inc @index}}Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback extraSpace" aria-hidden="false"></span>
         <div class="input-group-addon">%</div>
         </div>
       </div> 
@@ -294,7 +320,7 @@
   <script src="assets/js/handleBarIinit.js"></script>
 
       <script src="assets/js/DSQIcalculator.js"></script>
-  <script src="assets/js/Test-Cases/testCases.js"></script>
+  <!--<script src="assets/js/Test-Cases/testCases.js"></script>-->
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>

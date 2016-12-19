@@ -192,21 +192,23 @@ DO NOT EDIT ANYTHING BELOW
 					DSQI += (dValues[i] * (weights[i] / 100));
 				}
 
-			console.log("D Value Array: " + dValues.toString());	
-			console.log("Weights Array: " + weights.toString());
 			console.log("DSQI: " + DSQI);
-			console.log("-------------------------------------------");					
+			console.log("Pass Case");	
 				
 			}else{
+
 				console.log("Weights don't add up to 100")
 	    	}
 
 	    
 			
 		}else{
+
 			console.log("Invalid weights");
 		}
-		
+		console.log("D Value Array: " + dValues.toString());	
+		console.log("Weights Array: " + weights.toString());
+		console.log("-------------------------------------------");	
 		
 	
 	}
