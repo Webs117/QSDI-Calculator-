@@ -19,7 +19,7 @@
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="jumbotron-narrow.css" rel="stylesheet">
+    <link href="mainStyles.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -43,27 +43,9 @@
 	  
 
         <h1 class="text-center">DSQI Calculator</h1>
-		<!--
-		<div id="introText" class="row">
-        <p class="lead">DSQI evaluates a program’s:</p>
-		<ul>
-			<li>
-			Design Structure
-			</li>
-			<li>
-			Efficiency of Modules
-			</li>
-		</ul>
-
-		<p>DSQI result will be between 0 and 1. The closer to 1, the higher the quality.</p>
-		<p>Input descriptions can be found by clicking on the blue buttons next to each input field.</p>
-		<p>To update S-Values for D-Value and DSQI calculations click “Set S Values” button.</p>
-	  </div>
-	  
-	  -->
-	  
-	  <br/>
-	  <br/>
+	      <br/>
+	      <br/>
+        
         <div class="row">
 			<h3 class="col-sm-5 text-center">S-Values</h3>      
         </div>
@@ -120,7 +102,7 @@
         </div>
 
           
-          <div id="invalidS" class="alert alert-danger" role="alert" style="display: none">Invalid S input. S values must be greater than zero</div>
+          <div id="invalidS" class="alert alert-danger" role="alert" style="display: none">Invalid S input.</div>
           <div id="invalid1" class="alert alert-danger" role="alert" style="display: none">S<sub>1</sub> must be greater than S<sub>2</sub></div>
           <div id="invalid2" class="alert alert-danger" role="alert" style="display: none">S<sub>1</sub> must be greater than S<sub>3</sub></div>
           <div id="invalid3" class="alert alert-danger" role="alert" style="display: none">S<sub>4</sub> must be greater than S<sub>5</sub></div>
@@ -142,7 +124,7 @@
 
         <div class="row">
         <h3 class="col-sm-5 text-center">D-Values</h3>
-        <h3 class="col-sm-7 text-center">Weights    <small>       (Must Total 100%)</small></h3>       
+        <h3 class="col-sm-7 text-center">Weights<small>(Must Total 100%)</small></h3>       
         </div>
 		
         <form class="form-horizontal">
@@ -209,7 +191,7 @@
     <script src="assets/js/handlebars-v4.0.5.js"></script> 
  
 
-
+<!--S-value template --> 
 <script id="sValueTemplate" type="text/x-handlebars-template">
 
   {{#each blocks}}
@@ -269,7 +251,7 @@
 
 </script>
 
-
+<!-- D values and Weights template -->
 <script id="W-and-D-Values" type="text/x-handlebars-template">
 
   {{#each blocks}}
@@ -319,7 +301,9 @@
 
   <script src="assets/js/handleBarIinit.js"></script>
 
-      <script src="assets/js/DSQIcalculator.js"></script>
+  <script src="assets/js/DSQIcalculator.js"></script>
+
+
   <!--<script src="assets/js/Test-Cases/testCases.js"></script>-->
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
